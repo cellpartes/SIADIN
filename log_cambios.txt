@@ -3,3 +3,6 @@
 
 -frmSubCategorias
   -frmDetalleSubCategorias
+
+-frmMarcas
+  -frmDetalleMarcas
