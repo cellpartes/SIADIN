@@ -153,6 +153,12 @@
     <Compile Include="frm\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm\frmDetalleSubCategoria.Designer.vb">
+      <DependentUpon>frmDetalleSubCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleSubCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm\frmEmpresasEnvio.designer.vb">
       <DependentUpon>frmEmpresasEnvio.vb</DependentUpon>
     </Compile>
@@ -271,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleSubCategoria.resx">
+      <DependentUpon>frmDetalleSubCategoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frmEmpresasEnvio.resx">
       <DependentUpon>frmEmpresasEnvio.vb</DependentUpon>
