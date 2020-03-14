@@ -1,2 +1,5 @@
--frcategorias
+-frmcategorias
   -frmDetalleCategorias
+
+-frmSubCategorias
+  -frmDetalleSubCategorias
