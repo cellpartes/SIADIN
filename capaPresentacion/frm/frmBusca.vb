@@ -285,8 +285,8 @@ Public Class frmBusca
             Close()
         End If
         If Me.Text = "BusquedaMarcas" Then
-            n = dgvResultado.CurrentRow.Index
-            frmMarcas.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'n = dgvResultado.CurrentRow.Index
+            'frmMarcas.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
             Close()
         End If
         If Me.Text = "BusquedaSubCategorias" Then
