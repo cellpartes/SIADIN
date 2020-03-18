@@ -45,7 +45,7 @@ Partial Class frmSubCategoria
         '
         Me.ToolStrip1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(45, 45)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btdAgregar, Me.btdEditar, Me.btdEliminar, Me.ToolStripSeparator1, Me.txtBusca, Me.btdBuscar, Me.btdImprimir, Me.ToolStripSeparator3, Me.btdSalir, Me.ToolStripSeparator2})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btdAgregar, Me.btdEditar, Me.btdEliminar, Me.ToolStripSeparator1, Me.btdImprimir, Me.ToolStripSeparator3, Me.txtBusca, Me.btdBuscar, Me.ToolStripSeparator2, Me.btdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(598, 52)
@@ -131,7 +131,7 @@ Partial Class frmSubCategoria
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.GroupBox2.Controls.Add(Me.dgvResultado)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(21, 101)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 55)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(533, 270)
         Me.GroupBox2.TabIndex = 73

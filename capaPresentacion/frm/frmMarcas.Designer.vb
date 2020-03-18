@@ -45,7 +45,7 @@ Partial Class frmMarcas
         '
         Me.ToolStrip1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(45, 45)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btdAgregar, Me.btdEditar, Me.btdEliminar, Me.ToolStripSeparator1, Me.txtBusca, Me.btdBuscar, Me.ToolStripSeparator3, Me.btdImprimir, Me.ToolStripSeparator2, Me.btdSalir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btdAgregar, Me.btdEditar, Me.btdEliminar, Me.ToolStripSeparator1, Me.btdImprimir, Me.ToolStripSeparator3, Me.txtBusca, Me.btdBuscar, Me.ToolStripSeparator2, Me.btdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(604, 52)

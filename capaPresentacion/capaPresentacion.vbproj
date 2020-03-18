@@ -153,6 +153,18 @@
     <Compile Include="frm\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm\frmDetalleClientes.Designer.vb">
+      <DependentUpon>frmDetalleClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frmDetalleEmpresasEnvio.Designer.vb">
+      <DependentUpon>frmDetalleEmpresasEnvio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleEmpresasEnvio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm\frmDetalleMarcas.Designer.vb">
       <DependentUpon>frmDetalleMarcas.vb</DependentUpon>
     </Compile>
@@ -283,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleClientes.resx">
+      <DependentUpon>frmDetalleClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleEmpresasEnvio.resx">
+      <DependentUpon>frmDetalleEmpresasEnvio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frmDetalleMarcas.resx">
       <DependentUpon>frmDetalleMarcas.vb</DependentUpon>

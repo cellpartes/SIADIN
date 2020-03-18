@@ -52,20 +52,6 @@ Public Class frmMarcas
         frmDetalleMarcas.Text = "Actualizar"
         frmDetalleMarcas.txtId.Text = lv_id
         frmDetalleMarcas.txtId.Enabled = False
-        'If txtId.Text <> "" Then
-        'btdAgregar.Enabled = False
-        'btdEditar.Enabled = False
-        'btdEliminar.Enabled = False
-        'btdBuscar.Enabled = False
-        'btdImprimir.Enabled = False
-        'btdSalir.Enabled = False
-        'btdOk.Visible = True
-        'btdCancela.Visible = True
-        'txtNombre.Enabled = True
-        'lv_operacion = "Editar"
-        'Else
-        'MessageBox.Show("Por favor seleccionar una Marca", "Marcas", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        'End If
     End Sub
 
     Private Sub btdEliminar_Click(sender As Object, e As EventArgs) Handles btdEliminar.Click

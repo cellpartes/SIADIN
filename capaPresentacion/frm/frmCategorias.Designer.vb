@@ -34,7 +34,6 @@ Partial Class frmCategorias
         Me.btdImprimir = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btdSalir = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvResultado = New System.Windows.Forms.DataGridView()
@@ -47,7 +46,7 @@ Partial Class frmCategorias
         '
         Me.ToolStrip1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(45, 45)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btdAgregar, Me.btdEditar, Me.btdEliminar, Me.ToolStripSeparator4, Me.txtBusca, Me.btdBuscar, Me.ToolStripSeparator1, Me.btdImprimir, Me.ToolStripSeparator3, Me.btdSalir, Me.ToolStripSeparator2})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btdAgregar, Me.btdEditar, Me.btdEliminar, Me.ToolStripSeparator4, Me.btdImprimir, Me.ToolStripSeparator1, Me.txtBusca, Me.btdBuscar, Me.ToolStripSeparator3, Me.btdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(628, 52)
@@ -128,11 +127,6 @@ Partial Class frmCategorias
         Me.btdSalir.Size = New System.Drawing.Size(49, 49)
         Me.btdSalir.Text = "Salir"
         '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 52)
-        '
         'ToolStrip2
         '
         Me.ToolStrip2.BackColor = System.Drawing.SystemColors.ControlLight
@@ -147,7 +141,7 @@ Partial Class frmCategorias
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.GroupBox2.Controls.Add(Me.dgvResultado)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(21, 103)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 55)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(541, 274)
         Me.GroupBox2.TabIndex = 71
@@ -192,7 +186,6 @@ Partial Class frmCategorias
     Friend WithEvents btdImprimir As ToolStripButton
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents btdSalir As ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents txtBusca As ToolStripTextBox
     Friend WithEvents ToolStrip2 As ToolStrip
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
