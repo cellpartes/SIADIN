@@ -18,7 +18,6 @@ Public Class frmclientes
         frmPrincipal.PanelContenedor.Controls.Add(fh)
         frmPrincipal.PanelContenedor.Tag = fh
         fh.Show()
-
     End Sub
 
     Private Sub btdAgregar_Click(sender As Object, e As EventArgs) Handles btdAgregar.Click

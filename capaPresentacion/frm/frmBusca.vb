@@ -270,9 +270,9 @@ Public Class frmBusca
             'Close()
         End If
         If Me.Text = "BusquedaProveedores" Then
-            n = dgvResultado.CurrentRow.Index
-            frmProveedores.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
-            Close()
+            'n = dgvResultado.CurrentRow.Index
+            'frmProveedores.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'Close()
         End If
         If Me.Text = "BusquedaCourier" Then
             'n = dgvResultado.CurrentRow.Index
