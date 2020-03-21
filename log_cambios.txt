@@ -12,3 +12,6 @@
 
 -frmClientes
   -frmDetalleClientes
+
+-frmServicios
+  -frmDetalleServicios
