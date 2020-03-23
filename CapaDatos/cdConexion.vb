@@ -14,9 +14,9 @@ Public Class cdConexion
         'Prod Localhost
         'myConnectionString = "server=192.168.0.64;Port=3306;Database=imexgonp;Uid=useradd;Pwd=$Lenovo01;"
         'Mi Local
-        'myConnectionString = "server=127.0.0.1;Port=3306;Database=imexgonp_basedatos;Uid=root;Pwd=admin;"
+        myConnectionString = "server=127.0.0.1;Port=3306;Database=imexgonp_basedatos;Uid=root;Pwd=admin;"
         'Prod Web
-        myConnectionString = "server=167.114.163.236;Port=3306;Database=imexgonp_basedatos;Uid=imexgonp_useradd;Pwd=$Lenovo01;"
+        'myConnectionString = "server=167.114.163.236;Port=3306;Database=imexgonp_basedatos;Uid=imexgonp_useradd;Pwd=$Lenovo01;"
         Try
             conexion.ConnectionString = myConnectionString
             'conexion.Open()
