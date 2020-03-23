@@ -153,6 +153,42 @@
     <Compile Include="frm\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm\frmDetalleClientes.Designer.vb">
+      <DependentUpon>frmDetalleClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frmDetalleEmpresasEnvio.Designer.vb">
+      <DependentUpon>frmDetalleEmpresasEnvio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleEmpresasEnvio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frmDetalleMarcas.Designer.vb">
+      <DependentUpon>frmDetalleMarcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleMarcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frmDetalleProveedores.Designer.vb">
+      <DependentUpon>frmDetalleProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frmDetalleServicios.Designer.vb">
+      <DependentUpon>frmDetalleServicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frmDetalleSubCategoria.Designer.vb">
+      <DependentUpon>frmDetalleSubCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleSubCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm\frmEmpresasEnvio.designer.vb">
       <DependentUpon>frmEmpresasEnvio.vb</DependentUpon>
     </Compile>
@@ -272,6 +308,24 @@
     <EmbeddedResource Include="frm\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleClientes.resx">
+      <DependentUpon>frmDetalleClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleEmpresasEnvio.resx">
+      <DependentUpon>frmDetalleEmpresasEnvio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleMarcas.resx">
+      <DependentUpon>frmDetalleMarcas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleProveedores.resx">
+      <DependentUpon>frmDetalleProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleServicios.resx">
+      <DependentUpon>frmDetalleServicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleSubCategoria.resx">
+      <DependentUpon>frmDetalleSubCategoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\frmEmpresasEnvio.resx">
       <DependentUpon>frmEmpresasEnvio.vb</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +401,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\agregar.jpg" />
+    <None Include="Icons\AperturaCaja.jpg" />
+    <None Include="Icons\AjustesInventario.jfif" />
     <Content Include="Icons\buscar.jpg" />
     <None Include="Icons\caja_vacia.jpg" />
     <Content Include="Icons\cancelar.jpg" />
@@ -359,6 +415,7 @@
     <Content Include="Icons\Clientes por ubicacion.jpg" />
     <Content Include="Icons\Clientes.jpg" />
     <Content Include="Icons\codigo_qr.jpg" />
+    <None Include="Icons\compra.jpg" />
     <Content Include="Icons\Consultas.png" />
     <Content Include="Icons\Courier.gif" />
     <None Include="Icons\ctasBancarias.jpg" />
@@ -390,7 +447,9 @@
     <Content Include="Icons\ok.jpg" />
     <Content Include="Icons\ok_accept_16747.png" />
     <Content Include="Icons\Operaciones.png" />
+    <None Include="Icons\OrdenCompra.jpg" />
     <Content Include="Icons\PORTADA-01.jpg" />
+    <None Include="Icons\Presupuestos.jpg" />
     <Content Include="Icons\Proveedores por Ubicacion.jpg" />
     <Content Include="Icons\Proveedores.jpg" />
     <Content Include="Icons\Registro de Ventas.jpg" />
@@ -398,9 +457,11 @@
     <Content Include="Icons\ResumenVentas.png" />
     <Content Include="Icons\salir.jpg" />
     <None Include="Icons\Servicios.jpg" />
+    <None Include="Icons\TransferenciasAlmacen.png" />
     <Content Include="Icons\ubica.jpg" />
     <None Include="Icons\Vendedores.jpg" />
     <Content Include="Icons\Ventas.jpg" />
+    <None Include="Icons\Ventas.png" />
     <Content Include="Icons\VentasxUbicacion.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

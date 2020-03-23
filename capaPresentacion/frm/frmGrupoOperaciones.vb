@@ -14,12 +14,10 @@ Public Class frmGrupoOperaciones
     End Sub
 
     Private Sub btdVentas_Click(sender As Object, e As EventArgs) Handles btdVentas.Click
-        'AbrirFormInPanel(frmVentas)
         frmPrincipal.txtTitulo.Text = "Ventas"
     End Sub
 
-    Private Sub btdCirreCaja_Click(sender As Object, e As EventArgs) Handles btdCirreCaja.Click
-        'AbrirFormInPanel(frmCierreCaja)
-        frmPrincipal.txtTitulo.Text = "Apertura/Cierre de Caja"
+    Private Sub btdCierreCaja_Click(sender As Object, e As EventArgs) Handles btdCierreCaja.Click
+        frmPrincipal.txtTitulo.Text = "Apertura/Cierre de caja"
     End Sub
 End Class

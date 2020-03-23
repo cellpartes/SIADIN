@@ -1,0 +1,17 @@
+-frmcategorias
+  -frmDetalleCategorias
+
+-frmSubCategorias
+  -frmDetalleSubCategorias
+
+-frmMarcas
+  -frmDetalleMarcas
+
+-frmEmpresasEnvio
+  -frmDetalleEmpresasEnvio
+
+-frmClientes
+  -frmDetalleClientes
+
+-frmServicios
+  -frmDetalleServicios

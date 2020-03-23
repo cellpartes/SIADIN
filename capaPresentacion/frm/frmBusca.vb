@@ -265,19 +265,19 @@ Public Class frmBusca
         '    Close()
         'End If
         If Me.Text = "BusquedaClientes" Then
-            n = dgvResultado.CurrentRow.Index
-            frmclientes.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
-            Close()
+            'n = dgvResultado.CurrentRow.Index
+            'frmclientes.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'Close()
         End If
         If Me.Text = "BusquedaProveedores" Then
-            n = dgvResultado.CurrentRow.Index
-            frmProveedores.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
-            Close()
+            'n = dgvResultado.CurrentRow.Index
+            'frmProveedores.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'Close()
         End If
         If Me.Text = "BusquedaCourier" Then
-            n = dgvResultado.CurrentRow.Index
-            frmEmpresasEnvio.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
-            Close()
+            'n = dgvResultado.CurrentRow.Index
+            'frmEmpresasEnvio.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'Close()
         End If
         If Me.Text = "BusquedaCategoria" Then
             'n = dgvResultado.CurrentRow.Index
@@ -285,13 +285,13 @@ Public Class frmBusca
             Close()
         End If
         If Me.Text = "BusquedaMarcas" Then
-            n = dgvResultado.CurrentRow.Index
-            frmMarcas.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'n = dgvResultado.CurrentRow.Index
+            'frmMarcas.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
             Close()
         End If
         If Me.Text = "BusquedaSubCategorias" Then
-            n = dgvResultado.CurrentRow.Index
-            frmSubCategoria.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'n = dgvResultado.CurrentRow.Index
+            'frmSubCategoria.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
             Close()
         End If
         If Me.Text = "AgregaVendedor" Then

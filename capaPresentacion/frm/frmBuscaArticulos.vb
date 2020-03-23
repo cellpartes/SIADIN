@@ -383,14 +383,14 @@ Public Class frmBuscaArticulos
             frmDetalleCatalogo.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
             Close()
         ElseIf Me.Text = "AgregaServicio" Then
-            n = dgvResultado.CurrentRow.Index
-            frmServicios.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
-            frmServicios.txtDescripcion.Text = dgvResultado.Rows(n).Cells(1).Value
+            'n = dgvResultado.CurrentRow.Index
+            'frmServicios.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'frmServicios.txtDescripcion.Text = dgvResultado.Rows(n).Cells(1).Value
             Close()
         ElseIf Me.Text = "BuscaServicio" Then
-            n = dgvResultado.CurrentRow.Index
-            frmServicios.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
-            Close()
+            'n = dgvResultado.CurrentRow.Index
+            'frmServicios.txtId.Text = dgvResultado.Rows(n).Cells(0).Value
+            'Close()
         End If
     End Sub
 

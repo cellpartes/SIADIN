@@ -28,16 +28,16 @@ Partial Class frmBuscaArticulos
         Me.btdOk = New System.Windows.Forms.PictureBox()
         Me.dgvResultado = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbMarca = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.cbCategoria = New System.Windows.Forms.ComboBox()
         Me.cbSubCategoria = New System.Windows.Forms.ComboBox()
         Me.rbNombre = New System.Windows.Forms.RadioButton()
         Me.rbId = New System.Windows.Forms.RadioButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBusca = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbMarca = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.btdCancelar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btdOk, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +109,41 @@ Partial Class frmBuscaArticulos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Criterio de Busqueda"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(248, 52)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(91, 16)
+        Me.Label4.TabIndex = 34
+        Me.Label4.Text = "SubCategoria"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(530, 52)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(46, 16)
+        Me.Label3.TabIndex = 33
+        Me.Label3.Text = "Marca"
+        '
+        'cbMarca
+        '
+        Me.cbMarca.FormattingEnabled = True
+        Me.cbMarca.Location = New System.Drawing.Point(582, 49)
+        Me.cbMarca.Name = "cbMarca"
+        Me.cbMarca.Size = New System.Drawing.Size(152, 24)
+        Me.cbMarca.TabIndex = 32
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(15, 52)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(67, 16)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Categoria"
+        '
         'cbCategoria
         '
         Me.cbCategoria.FormattingEnabled = True
@@ -162,41 +197,6 @@ Partial Class frmBuscaArticulos
         Me.txtBusca.Name = "txtBusca"
         Me.txtBusca.Size = New System.Drawing.Size(644, 22)
         Me.txtBusca.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 52)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 16)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "Categoria"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(530, 52)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 16)
-        Me.Label3.TabIndex = 33
-        Me.Label3.Text = "Marca"
-        '
-        'cbMarca
-        '
-        Me.cbMarca.FormattingEnabled = True
-        Me.cbMarca.Location = New System.Drawing.Point(582, 49)
-        Me.cbMarca.Name = "cbMarca"
-        Me.cbMarca.Size = New System.Drawing.Size(152, 24)
-        Me.cbMarca.TabIndex = 32
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(248, 52)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 16)
-        Me.Label4.TabIndex = 34
-        Me.Label4.Text = "SubCategoria"
         '
         'frmBuscaArticulos
         '
