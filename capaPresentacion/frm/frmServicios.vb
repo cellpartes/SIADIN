@@ -77,7 +77,7 @@ Public Class frmServicios
     Private Sub btdAgregar_Click(sender As Object, e As EventArgs) Handles btdAgregar.Click
         Close()
         AbrirFormInPanel(frmDetalleServicios)
-        frmPrincipal.txtTitulo.Text = "Agregar Servicio"
+        frmPrincipal.txtTitulo.Text = "Agregar Producto y/o Servicio"
         frmDetalleServicios.Text = "Agregar"
         frmDetalleServicios.txtDescripcion.Enabled = True
         frmDetalleServicios.txtMonto.Enabled = True
