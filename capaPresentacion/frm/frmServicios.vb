@@ -84,27 +84,6 @@ Public Class frmServicios
         frmDetalleServicios.txtActivo.Visible = False
         frmDetalleServicios.cbActivo.Visible = True
         frmDetalleServicios.cbActivo.SelectedValue = 1
-        'btdAgregar.Enabled = False
-        'btdEditar.Enabled = False
-        'btdEliminar.Enabled = False
-        'btdBuscar.Enabled = False
-        'btdImprimir.Enabled = False
-        'btdSalir.Enabled = False
-        'btdOk.Visible = True
-        'btdCancela.Visible = True
-        'txtId.Text = ""
-        'txtDescripcion.Text = ""
-        'txtDescripcion.Enabled = True
-        'txtMonto.Text = ""
-        'txtMonto.Enabled = True
-        'txtFechaUltMov.Text = ""
-        'txtActivo.Visible = False
-        'txtActivo.Text = ""
-        'cbActivo.Visible = True
-        'cbActivo.SelectedValue = 1
-        'lv_operacion = "Agregar"
-        'frmBuscaArticulos.Text = "AgregaServicio"
-        'frmBuscaArticulos.Show()
     End Sub
     Private Sub btdEditar_Click(sender As Object, e As EventArgs) Handles btdEditar.Click
         Try
@@ -124,23 +103,7 @@ Public Class frmServicios
         frmDetalleServicios.cbActivo.Visible = True
         frmDetalleServicios.GroupBox1.Visible = False
         frmDetalleServicios.GroupBox2.Visible = False
-        'If txtId.Text <> "" Then
-        'btdAgregar.Enabled = False
-        'btdEditar.Enabled = False
-        'btdEliminar.Enabled = False
-        'btdBuscar.Enabled = False
-        'btdImprimir.Enabled = False
-        'btdSalir.Enabled = False
-        'btdOk.Visible = True
-        'btdCancela.Visible = True
-        'txtDescripcion.Enabled = True
-        'txtMonto.Enabled = True
-        'txtActivo.Visible = False
-        'cbActivo.Visible = True
-        'lv_operacion = "Editar"
-        'Else
-        'MessageBox.Show("Por favor seleccionar un Servicio", "Servicios", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        'End If
+
     End Sub
     Private Sub btdEliminar_Click(sender As Object, e As EventArgs) Handles btdEliminar.Click
         Try
@@ -236,29 +199,6 @@ Public Class frmServicios
             MuestraTablas()
         End If
     End Sub
-
-    Private Sub txtBusca_TextChanged(sender As Object, e As EventArgs) Handles txtBusca.TextChanged
-        'If cbSubCategoria.SelectedValue = "000" And cbMarca.SelectedValue = "000" Then
-        'lv_busqueda = ";"
-        'ElseIf cbSubCategoria.SelectedValue <> "000" And cbMarca.SelectedValue = "000" Then
-        'lv_busqueda = "and b.idSubCategoria = '" & cbSubCategoria.SelectedValue & ";"
-        'ElseIf cbSubCategoria.SelectedValue = "000" And cbMarca.SelectedValue <> "000" Then
-        'lv_busqueda = "and b.idMarca = '" & cbMarca.SelectedValue & "';"
-        'ElseIf cbSubCategoria.SelectedValue <> "000" And cbMarca.SelectedValue <> "000" Then
-        'lv_busqueda = "and b.idSubCategoria = '" & cbSubCategoria.SelectedValue & "' and b.idMarca = '" & cbMarca.SelectedValue & "';"
-        'End If
-        'consulta = "select a.idArticulo, b.descripcion, c.descripcion as categoria, d.descripcion as subcategoria, e.Descripcion as marca " _
-        '               & "  from adm_servicios a " _
-        '               & " inner join adm_catalogo b on a.idArticulo = b.idArticulo " _
-        '               & " inner join adm_categorias c on b.idCategoria=c.idCategoria " _
-        '               & " inner join adm_subcategorias d on b.idSubCategoria=d.idSubCategoria " _
-        '               & " inner join adm_marcas e on b.idMarca = e.idMarca" _
-        '               & " where b.idCategoria '" & cbCategoria.SelectedValue & "'" + lv_busqueda
-        '& " where b.descripcion Like '%" & txtBusca.Text & "%' and b.idCategoria = '" & cbCategoria.SelectedValue & "'" + lv_busqueda
-        'tabla = "adm_servicios"
-        'dgvResultado.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
-    End Sub
-
     Private Sub cbSubCategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSubCategoria.SelectedIndexChanged
         If lv_swcb = "1" Then
             MuestraTablas()
