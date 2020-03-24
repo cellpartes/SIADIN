@@ -20,4 +20,8 @@ Public Class frmGrupoOperaciones
     Private Sub btdCierreCaja_Click(sender As Object, e As EventArgs) Handles btdCierreCaja.Click
         frmPrincipal.txtTitulo.Text = "Apertura/Cierre de caja"
     End Sub
+
+    Private Sub frmGrupoOperaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

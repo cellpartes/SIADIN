@@ -403,6 +403,8 @@
     <Content Include="Icons\agregar.jpg" />
     <None Include="Icons\AperturaCaja.jpg" />
     <None Include="Icons\AjustesInventario.jfif" />
+    <None Include="Icons\articulos .jpg" />
+    <None Include="Icons\ajusteInventario.jpg" />
     <Content Include="Icons\buscar.jpg" />
     <None Include="Icons\caja_vacia.jpg" />
     <Content Include="Icons\cancelar.jpg" />
@@ -425,6 +427,7 @@
     <Content Include="Icons\elimnar.jpg" />
     <Content Include="Icons\EmpresasEnvio.gif" />
     <Content Include="Icons\imprimir.jpg" />
+    <None Include="Icons\inventarioInicial.jpg" />
     <Content Include="Icons\Login.jpg" />
     <Content Include="Icons\Logo.png" />
     <Content Include="Icons\Logo1.png" />
@@ -438,6 +441,7 @@
     <Content Include="Icons\Minimizar.png" />
     <Content Include="Icons\mobile-menu.png" />
     <Content Include="Icons\next_user_16730.png" />
+    <None Include="Icons\notaDeCredito.jpg" />
     <Content Include="Icons\Nueva carpeta\Enviar.gif" />
     <Content Include="Icons\Nueva carpeta\Enviar.jpg" />
     <Content Include="Icons\Nueva carpeta\excel.jpg" />
@@ -451,6 +455,7 @@
     <None Include="Icons\OrdenCompra.jpg" />
     <Content Include="Icons\PORTADA-01.jpg" />
     <None Include="Icons\Presupuestos.jpg" />
+    <None Include="Icons\prearticulo.jpg" />
     <Content Include="Icons\Proveedores por Ubicacion.jpg" />
     <Content Include="Icons\Proveedores.jpg" />
     <Content Include="Icons\Registro de Ventas.jpg" />
@@ -459,6 +464,8 @@
     <Content Include="Icons\salir.jpg" />
     <None Include="Icons\Servicios.jpg" />
     <None Include="Icons\TransferenciasAlmacen.png" />
+    <None Include="Icons\traspasoSalida.jpg" />
+    <None Include="Icons\traspasoEntrada.jpg" />
     <Content Include="Icons\ubica.jpg" />
     <None Include="Icons\Vendedores.jpg" />
     <Content Include="Icons\Ventas.jpg" />

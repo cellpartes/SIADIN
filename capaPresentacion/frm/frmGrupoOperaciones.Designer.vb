@@ -22,6 +22,13 @@ Partial Class frmGrupoOperaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btdAjustes = New System.Windows.Forms.Button()
         Me.btdTransferencias = New System.Windows.Forms.Button()
@@ -31,6 +38,104 @@ Partial Class frmGrupoOperaciones
         Me.btdCierreCaja = New System.Windows.Forms.Button()
         Me.btdVentas = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'Button8
+        '
+        Me.Button8.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.ajusteInventario
+        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.Location = New System.Drawing.Point(731, 189)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(112, 154)
+        Me.Button8.TabIndex = 21
+        Me.Button8.Text = "Ajuste Inventario"
+        Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.inventarioInicial
+        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Location = New System.Drawing.Point(613, 189)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(112, 154)
+        Me.Button7.TabIndex = 20
+        Me.Button7.Text = "Inventario Inicial"
+        Me.Button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.prearticulo
+        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(495, 189)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(112, 154)
+        Me.Button6.TabIndex = 19
+        Me.Button6.Text = "Preartìculos"
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.articulos_
+        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(377, 189)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(112, 154)
+        Me.Button5.TabIndex = 18
+        Me.Button5.Text = "Artículos"
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.notaDeCredito
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(259, 189)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(112, 154)
+        Me.Button4.TabIndex = 17
+        Me.Button4.Text = "Nota de Crédito"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.traspasoEntrada
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(141, 189)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(112, 154)
+        Me.Button3.TabIndex = 16
+        Me.Button3.Text = "Traspaso Entrada"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.traspasoSalida
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(23, 189)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(112, 154)
+        Me.Button2.TabIndex = 15
+        Me.Button2.Text = "Traspaso Salida"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -150,6 +255,13 @@ Partial Class frmGrupoOperaciones
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(1050, 401)
+        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btdAjustes)
         Me.Controls.Add(Me.btdTransferencias)
@@ -173,4 +285,11 @@ Partial Class frmGrupoOperaciones
     Friend WithEvents btdCierreCaja As Button
     Friend WithEvents btdVentas As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
 End Class
