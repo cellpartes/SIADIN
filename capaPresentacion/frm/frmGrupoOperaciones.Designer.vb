@@ -22,6 +22,7 @@ Partial Class frmGrupoOperaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btdAjustes = New System.Windows.Forms.Button()
         Me.btdTransferencias = New System.Windows.Forms.Button()
         Me.btdOrdenCompra = New System.Windows.Forms.Button()
@@ -30,6 +31,20 @@ Partial Class frmGrupoOperaciones
         Me.btdCierreCaja = New System.Windows.Forms.Button()
         Me.btdVentas = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.Devoluciones
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(849, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(112, 154)
+        Me.Button1.TabIndex = 14
+        Me.Button1.Text = "Ajustes"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'btdAjustes
         '
@@ -135,6 +150,7 @@ Partial Class frmGrupoOperaciones
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(1050, 401)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btdAjustes)
         Me.Controls.Add(Me.btdTransferencias)
         Me.Controls.Add(Me.btdOrdenCompra)
@@ -144,7 +160,7 @@ Partial Class frmGrupoOperaciones
         Me.Controls.Add(Me.btdVentas)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmGrupoOperaciones"
-        Me.Text = "Operaciones"
+        Me.Text = "Devoluciones"
         Me.ResumeLayout(False)
 
     End Sub
@@ -156,4 +172,5 @@ Partial Class frmGrupoOperaciones
     Friend WithEvents btdPresupuestos As Button
     Friend WithEvents btdCierreCaja As Button
     Friend WithEvents btdVentas As Button
+    Friend WithEvents Button1 As Button
 End Class

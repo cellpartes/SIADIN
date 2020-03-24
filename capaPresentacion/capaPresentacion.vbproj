@@ -420,6 +420,7 @@
     <Content Include="Icons\Courier.gif" />
     <None Include="Icons\ctasBancarias.jpg" />
     <Content Include="Icons\delete_remove_user_16733.png" />
+    <None Include="Icons\Devoluciones.jpg" />
     <Content Include="Icons\editar.jpg" />
     <Content Include="Icons\elimnar.jpg" />
     <Content Include="Icons\EmpresasEnvio.gif" />
