@@ -42,7 +42,7 @@ Partial Class frmGrupoOperaciones
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(112, 154)
         Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Ajustes"
+        Me.Button1.Text = "Devoluciones"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = True
         '
