@@ -6,6 +6,8 @@ Public Class frmEmpresasEnvio
     Dim tabla As String
     Dim n As Integer
     Dim lv_id As String
+    Dim lv_swcb As String
+    Dim lv_operacion As String
     Dim cnAccesoDatos As New cnAccesoDatos()
     Private Sub AbrirFormInPanel(formhijo As Object)
         If frmPrincipal.PanelContenedor.Controls.Count > 0 Then
@@ -17,6 +19,17 @@ Public Class frmEmpresasEnvio
         frmPrincipal.PanelContenedor.Controls.Add(fh)
         frmPrincipal.PanelContenedor.Tag = fh
         fh.Show()
+    End Sub
+    Public Sub ExcelDinamico()
+        If lv_operacion = "imprimir" Then
+            Try
+                cnAccesoDatos.ExcelDinamicoCourier(consulta)
+                MessageBox.Show("Archivo Creado", "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error generando archivo, " + ex.Message, "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+            lv_operacion = Nothing
+        End If
     End Sub
     Private Sub btdSalir_Click(sender As Object, e As EventArgs) Handles btdSalir.Click
         Me.Close()
@@ -95,20 +108,21 @@ Public Class frmEmpresasEnvio
     End Sub
 
     Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        Try
-            cnAccesoDatos.ExcelCourier()
-            MessageBox.Show("Archivo Creado", "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error generando archivo, " + ex.Message, "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        If lv_swcb = "1" Then
+            lv_operacion = "imprimir"
+            ExcelDinamico()
+        End If
     End Sub
 
     Private Sub frmEmpresasEnvio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lv_swcb = "0"
         consulta = "SELECT a.idEmpresaEnvio as ID, a.Nombre, c.Distrito as Ubicacion FROM adm_empresas_envio a INNER JOIN adm_distritos c ON a.Ubigeo_Distrito = c.Ubigeo_Distrito;"
         tabla = "adm_empresas_envio"
         dgvResultado.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
         dgvResultado.Columns(0).Width = 70
         dgvResultado.Columns(1).Width = 160
         dgvResultado.Columns(2).Width = 220
+        ExcelDinamico()
+        lv_swcb = "1"
     End Sub
 End Class

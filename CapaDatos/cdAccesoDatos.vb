@@ -83,7 +83,7 @@ Public Class cdAccesoDatos
             End Using
         End Using
     End Function
-    Public Function ExcelCourier()
+    Public Function ExcelDinamicoCourier(consulta As String)
         Using cn = objConexion.conectar
             cn.Open()
             Using command As New MySqlCommand
@@ -96,28 +96,20 @@ Public Class cdAccesoDatos
                 oSheet = oBook.Worksheets(1)
                 oSheet.Range("A1").Value = "Id"
                 oSheet.Range("B1").Value = "Nombre"
-                oSheet.Range("C1").Value = "Departamento"
-                oSheet.Range("D1").Value = "Provincia"
-                oSheet.Range("E1").Value = "Distrito"
-                oSheet.Range("A1:E1").Font.Bold = True
+                oSheet.Range("C1").Value = "Ubicacion"
+                oSheet.Range("A1:C1").Font.Bold = True
                 command.Connection = cn
-                command.CommandText = "SELECT a.idEmpresaEnvio, a.Nombre, d.Departamento, e.Provincia, c.Distrito " _
-                                    & "  FROM adm_empresas_envio a " _
-                                    & " INNER JOIN adm_distritos c ON a.Ubigeo_Distrito = c.Ubigeo_Distrito " _
-                                    & " INNER Join adm_departamentos d ON c.Ubigeo_Dpto = d.Ubigeo_Dpto " _
-                                    & " INNER JOIN adm_provincias e ON c.Ubigeo_Prov = e.Ubigeo_Prov;"
+                command.CommandText = consulta
                 command.CommandType = CommandType.Text
                 dr = command.ExecuteReader()
                 n = 2
                 While dr.Read()
-                    oSheet.Range("A" + CStr(n)).value = "'" + dr("idEmpresaEnvio")
-                    oSheet.Range("B" + CStr(n)).value = dr("nombre")
-                    oSheet.Range("C" + CStr(n)).value = dr("Departamento")
-                    oSheet.Range("D" + CStr(n)).value = dr("Provincia")
-                    oSheet.Range("E" + CStr(n)).value = dr("Distrito")
+                    oSheet.Range("A" + CStr(n)).value = "'" + dr("ID")
+                    oSheet.Range("B" + CStr(n)).value = dr("Nombre")
+                    oSheet.Range("C" + CStr(n)).value = dr("Ubicacion")
                     n = n + 1
                 End While
-                oSheet.Range("A1:E" + CStr(n)).Columns.AutoFit()
+                oSheet.Range("A1:C1" + CStr(n)).Columns.AutoFit()
                 n = 0
                 oExcel.ActiveWorkbook.SaveAs(My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\ListadoCourier.xlsx")
                 oExcel.Quit

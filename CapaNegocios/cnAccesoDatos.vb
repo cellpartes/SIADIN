@@ -8,8 +8,8 @@ Public Class cnAccesoDatos
     Public Function BusquedaCiurierxId(id As String)
         Return objCapaDatos.BusquedaCiurierxId(id)
     End Function
-    Public Function ExcelCourier()
-        Return objCapaDatos.ExcelCourier
+    Public Function ExcelDinamicoCourier(consulta As String)
+        Return objCapaDatos.ExcelDinamicoCourier(consulta)
     End Function
     Public Function LlenaComboBox(sql As String, tabla As String) As DataSet
         Return objCapaDatos.LlenaComboBox(sql, tabla)
