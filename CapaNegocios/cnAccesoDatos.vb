@@ -29,8 +29,8 @@ Public Class cnAccesoDatos
     Public Function BusquedaProveedorxId(id As String)
         Return objCapaDatos.BusquedaProveedorxId(id)
     End Function
-    Public Function ExcelProveedores()
-        Return objCapaDatos.ExcelProveedores
+    Public Function ExcelDinamicoProveedores(consulta As String)
+        Return objCapaDatos.ExcelDinamicoProveedores(consulta)
     End Function
     Public Function OperacionesImg(ByVal sql As String, ByVal imagen As Object, ByVal imagenBck As Object)
         Return objCapaDatos.OperacionesImg(sql, imagen, imagenBck)

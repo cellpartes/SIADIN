@@ -300,7 +300,7 @@ Public Class cdAccesoDatos
             End Using
         End Using
     End Function
-    Public Function ExcelProveedores()
+    Public Function ExcelDinamicoProveedores(consulta As String)
         Using cn = objConexion.conectar
             cn.Open()
             Using command As New MySqlCommand
@@ -313,46 +313,17 @@ Public Class cdAccesoDatos
                 oSheet = oBook.Worksheets(1)
                 oSheet.Range("A1").Value = "Id"
                 oSheet.Range("B1").Value = "Nombre"
-                oSheet.Range("C1").Value = "Tipo Indentificacion"
-                oSheet.Range("D1").Value = "Nro. Identificacion"
-                oSheet.Range("E1").Value = "Departamento"
-                oSheet.Range("F1").Value = "Provincia"
-                oSheet.Range("G1").Value = "Distrito"
-                oSheet.Range("H1").Value = "Direccion"
-                oSheet.Range("I1").Value = "Telefonos"
-                oSheet.Range("J1").Value = "email"
-                oSheet.Range("K1").Value = "WhatsApp"
-                oSheet.Range("L1").Value = "Nombre Contacto"
-                oSheet.Range("M1").Value = "Telefono Contacto"
-                oSheet.Range("N1").Value = "Zona"
-                oSheet.Range("A1:N1").Font.Bold = True
+                oSheet.Range("C1").Value = "Nro. Identificacion"
+                oSheet.Range("A1:C1").Font.Bold = True
                 command.Connection = cn
-                command.CommandText = "SELECT a.idProveedor, a.Nombre, b.Descripcion as tpIdentificacion, a.NroIdentificacion, d.Departamento, e.Provincia, " _
-                                    & "       c.Distrito, a.Direccion, a.Telefonos, a.email, a.WhatsApp, a.NombreContacto, a.TelefonoContacto, f.Descripcion as Zona" _
-                                    & "  FROM adm_proveedores a " _
-                                    & " INNER JOIN adm_tipos_identificacion b ON a.IdTpIdentificacion = b.IdTpIdentificacion " _
-                                    & " INNER JOIN adm_distritos c ON a.Ubigeo_Distrito = c.Ubigeo_Distrito " _
-                                    & " INNER Join adm_departamentos d ON c.Ubigeo_Dpto = d.Ubigeo_Dpto " _
-                                    & " INNER JOIN adm_provincias e ON c.Ubigeo_Prov = e.Ubigeo_Prov " _
-                                    & " INNER JOIN adm_zonas f ON a.idZona = f.idZona;"
+                command.CommandText = consulta
                 command.CommandType = CommandType.Text
                 dr = command.ExecuteReader()
                 n = 2
                 While dr.Read()
-                    oSheet.Range("A" + CStr(n)).value = "'" + dr("idProveedor")
+                    oSheet.Range("A" + CStr(n)).value = "'" + dr("id")
                     oSheet.Range("B" + CStr(n)).value = dr("nombre")
-                    oSheet.Range("C" + CStr(n)).value = dr("tpIdentificacion")
-                    oSheet.Range("D" + CStr(n)).value = dr("NroIdentificacion")
-                    oSheet.Range("E" + CStr(n)).value = dr("Departamento")
-                    oSheet.Range("F" + CStr(n)).value = dr("Provincia")
-                    oSheet.Range("G" + CStr(n)).value = dr("Distrito")
-                    oSheet.Range("H" + CStr(n)).value = dr("Direccion")
-                    oSheet.Range("I" + CStr(n)).value = dr("Telefonos")
-                    oSheet.Range("J" + CStr(n)).value = dr("email")
-                    oSheet.Range("K" + CStr(n)).value = dr("WhatsApp")
-                    oSheet.Range("L" + CStr(n)).value = dr("NombreContacto")
-                    oSheet.Range("M" + CStr(n)).value = dr("TelefonoContacto")
-                    oSheet.Range("N" + CStr(n)).value = dr("Zona")
+                    oSheet.Range("C" + CStr(n)).value = dr("identificacion")
                     n = n + 1
                 End While
                 oSheet.Range("A1:N" + CStr(n)).Columns.AutoFit()
