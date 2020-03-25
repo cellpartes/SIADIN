@@ -65,11 +65,11 @@ Public Class cnAccesoDatos
     Public Function BusquedaVendedorxId(id As String)
         Return objCapaDatos.BusquedaVendedorxId(id)
     End Function
-    Public Function ExcelVendedores()
-        Return objCapaDatos.ExcelVendedores
+    Public Function ExcelDinamicoVendedores(consulta As String)
+        Return objCapaDatos.ExcelDinamicoVendedores(consulta)
     End Function
-    Public Function ExcelServicios()
-        Return objCapaDatos.ExcelServicios
+    Public Function ExcelDinamicoServicios(consulta As String)
+        Return objCapaDatos.ExcelDinamicoServicios(consulta)
     End Function
     Public Function BusquedaServicioxId(id As String)
         Return objCapaDatos.BusquedaServicioxId(id)

@@ -72,6 +72,16 @@ Public Class frmVendedores
             MessageBox.Show("Error cargando Vendedores, " + ex.Message, "Vendedores", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End Try
+        If lv_operacion = "imprimir" Then
+            Try
+                cnAccesoDatos.ExcelDinamicoVendedores(consulta)
+                MessageBox.Show("Archivo Creado", "Vendedores", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error generando archivo, " + ex.Message, "Vendedores", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            End Try
+            lv_operacion = Nothing
+        End If
     End Sub
     Private Sub frmVendedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lv_swcb = "0"
@@ -114,13 +124,10 @@ Public Class frmVendedores
         End If
     End Sub
     Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        Try
-            cnAccesoDatos.ExcelVendedores()
-            MessageBox.Show("Archivo Creado", "Vendedores", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error generando archivo, " + ex.Message, "Vendedores", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Exit Sub
-        End Try
+        If lv_swcb = "1" Then
+            lv_operacion = "imprimir"
+            MuestraTablas()
+        End If
     End Sub
 
     Private Sub btdSalir_Click(sender As Object, e As EventArgs) Handles btdSalir.Click

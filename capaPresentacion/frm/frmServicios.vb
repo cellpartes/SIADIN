@@ -68,6 +68,15 @@ Public Class frmServicios
         Catch ex As Exception
 
         End Try
+        If lv_operacion = "imprimir" Then
+            Try
+                cnAccesoDatos.ExcelDinamicoServicios(consulta)
+                MessageBox.Show("Archivo Creado", "Servicios", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error generando archivo, " + ex.Message, "Servicios", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+            lv_operacion = Nothing
+        End If
     End Sub
     Private Sub btdSalir_Click(sender As Object, e As EventArgs) Handles btdSalir.Click
         Me.Close()
@@ -126,12 +135,11 @@ Public Class frmServicios
         End If
     End Sub
     Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        Try
-            cnAccesoDatos.ExcelServicios()
-            MessageBox.Show("Archivo Creado", "Servicios", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error generando archivo, " + ex.Message, "Servicios", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        If lv_swcb = "1" Then
+            lv_operacion = "imprimir"
+            MuestraTablas()
+        End If
+
     End Sub
 
     Private Sub btdBuscar_Click(sender As Object, e As EventArgs) Handles btdBuscar.Click

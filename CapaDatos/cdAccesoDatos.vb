@@ -895,7 +895,7 @@ Public Class cdAccesoDatos
             End Using
         End Using
     End Function
-    Public Function ExcelVendedores()
+    Public Function ExcelDinamicoVendedores(consulta As String)
         Using cn = objConexion.conectar
             cn.Open()
             Using command As New MySqlCommand
@@ -912,29 +912,22 @@ Public Class cdAccesoDatos
                 oSheet.Range("D1").Value = "Nro. Identificación"
                 oSheet.Range("E1").Value = "Zona"
                 oSheet.Range("F1").Value = "idEmpresa"
-                oSheet.Range("G1").Value = "idUsuario"
-                oSheet.Range("H1").Value = "Caja"
-                oSheet.Range("A1:H1").Font.Bold = True
+                oSheet.Range("G1").Value = "Caja"
+                oSheet.Range("A1:G1").Font.Bold = True
                 command.Connection = cn
-                command.CommandText = "Select a.idVendedor, a.Nombres, b.descripcion As TpIdentificacion, " _
-                                    & "       a.NroIdentifiacion, c.Descripcion As Zona, a.idEmpresa, " _
-                                    & "       a.idUsuario, d.Descripcion As Caja " _
-                                    & " from adm_vendedor a " _
-                                    & " inner join adm_tipos_identificacion b On a.idTpIdentificacion = b.idTpIdentificacion " _
-                                    & " inner join adm_zonas c On a.idZona = c.idZona " _
-                                    & " inner join adm_cajas d On a.idCaja = d.idCaja;"
+                command.CommandText = consulta
                 command.CommandType = CommandType.Text
                 dr = command.ExecuteReader()
                 n = 2
                 While dr.Read()
                     oSheet.Range("A" + CStr(n)).value = "'" + dr("idVendedor")
                     oSheet.Range("B" + CStr(n)).value = dr("Nombres")
-                    oSheet.Range("C" + CStr(n)).value = dr("TpIdentificacion")
+                    oSheet.Range("C" + CStr(n)).value = dr("TipoIdentificacion")
                     oSheet.Range("D" + CStr(n)).value = "'" + dr("NroIdentifiacion")
                     oSheet.Range("E" + CStr(n)).value = dr("Zona")
-                    oSheet.Range("F" + CStr(n)).value = "'" + dr("idEmpresa")
-                    oSheet.Range("G" + CStr(n)).value = dr("idUsuario")
-                    oSheet.Range("H" + CStr(n)).value = dr("Caja")
+                    oSheet.Range("F" + CStr(n)).value = "'" + dr("Empresa")
+                    oSheet.Range("G" + CStr(n)).value = dr("Caja")
+
                     n = n + 1
                 End While
                 oSheet.Range("A1:H" + CStr(n)).Columns.AutoFit()
@@ -945,7 +938,7 @@ Public Class cdAccesoDatos
             End Using
         End Using
     End Function
-    Public Function ExcelServicios()
+    Public Function ExcelDinamicoServicios(consulta As String)
         Using cn = objConexion.conectar
             cn.Open()
             Using command As New MySqlCommand
@@ -961,20 +954,9 @@ Public Class cdAccesoDatos
                 oSheet.Range("C1").Value = "Categoria"
                 oSheet.Range("D1").Value = "SubCategoria"
                 oSheet.Range("E1").Value = "Marca"
-                oSheet.Range("F1").Value = "Precio"
-                oSheet.Range("G1").Value = "idEmpresa"
-                oSheet.Range("H1").Value = "Activo"
-                oSheet.Range("I1").Value = "Fecha Ultimo Movimiento"
-                oSheet.Range("A1:I1").Font.Bold = True
+                oSheet.Range("A1:E1").Font.Bold = True
                 command.Connection = cn
-                command.CommandText = "Select a.idArticulo, b.descripcion, c.descripcion as categoria,  " _
-                                    & "       d.descripcion as subcategoria, e.Descripcion as marca, " _
-                                    & "       a.monto, a.idEmpresa, a.Activo, a.FechaUltMov " _
-                                    & "  from adm_servicios a " _
-                                    & " inner join adm_catalogo b on a.idArticulo = b.idArticulo " _
-                                    & " inner join adm_categorias c on b.idCategoria=c.idCategoria " _
-                                    & " inner join adm_subcategorias d on b.idSubCategoria=d.idSubCategoria " _
-                                    & " inner join adm_marcas e on b.idMarca = e.idMarca;"
+                command.CommandText = consulta
                 command.CommandType = CommandType.Text
                 dr = command.ExecuteReader()
                 n = 2
@@ -984,10 +966,6 @@ Public Class cdAccesoDatos
                     oSheet.Range("C" + CStr(n)).value = dr("categoria")
                     oSheet.Range("D" + CStr(n)).value = dr("subcategoria")
                     oSheet.Range("E" + CStr(n)).value = dr("marca")
-                    oSheet.Range("F" + CStr(n)).value = dr("monto")
-                    oSheet.Range("G" + CStr(n)).value = "'" + dr("idEmpresa")
-                    oSheet.Range("H" + CStr(n)).value = dr("Activo")
-                    oSheet.Range("I" + CStr(n)).value = "'" + dr("FechaUltMov")
                     n = n + 1
                 End While
                 oSheet.Range("A1:I" + CStr(n)).Columns.AutoFit()
