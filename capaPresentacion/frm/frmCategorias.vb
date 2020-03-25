@@ -5,6 +5,8 @@ Public Class frmCategorias
     Dim tabla As String
     Dim n As Integer
     Dim lv_id As String
+    Dim lv_swcb As String
+    Dim lv_operacion As String
     Dim cnAccesoDatos As New cnAccesoDatos()
     Private Sub AbrirFormInPanel(formhijo As Object)
         If frmPrincipal.PanelContenedor.Controls.Count > 0 Then
@@ -78,7 +80,17 @@ Public Class frmCategorias
             End If
         End If
     End Sub
-
+    Public Sub ExcelDinamico()
+        If lv_operacion = "imprimir" Then
+            Try
+                cnAccesoDatos.ExcelDinamicoCategoria(consulta)
+                MessageBox.Show("Archivo Creado", "Categorías", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error generando archivo, " + ex.Message, "Categorías", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+            lv_operacion = Nothing
+        End If
+    End Sub
     Private Sub btdBuscar_Click(sender As Object, e As EventArgs) Handles btdBuscar.Click
         consulta = "SELECT idCategoria as id, Descripcion from adm_categorias where Descripcion like '%" & txtBusca.Text & "%';"
         tabla = "adm_categorias"
@@ -86,19 +98,20 @@ Public Class frmCategorias
     End Sub
 
     Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        Try
-            cnAccesoDatos.ExcelCategoria()
-            MessageBox.Show("Archivo Creado", "Categorías", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error generando archivo, " + ex.Message, "Categorías", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        If lv_swcb = "1" Then
+            lv_operacion = "imprimir"
+            ExcelDinamico()
+        End If
     End Sub
 
     Private Sub frmCategorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lv_swcb = "0"
         consulta = "select idCategoria as id, Descripcion from adm_categorias;"
         tabla = "adm_categorias"
         dgvResultado.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
         dgvResultado.Columns(0).Width = 100
         dgvResultado.Columns(1).Width = 350
+        ExcelDinamico()
+        lv_swcb = "1"
     End Sub
 End Class
