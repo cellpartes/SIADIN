@@ -31,12 +31,19 @@ Public Class frmCatalogo
 
     End Sub
     Public Sub MuestraTablas()
+        Dim lv_Cat As String
         Dim lv_SubCat As String
         Dim lv_Marca As String
         Dim lv_Activo As String
         Dim lv_Frecuente As String
         Dim lv_Servicio As String
         Dim lv_text As String
+
+        If cbCategoria.SelectedValue = "000" Then
+            lv_Cat = "a.idCategoria = a.idCategoria"
+        Else
+            lv_Cat = "a.idCategoria = '" & cbCategoria.SelectedValue & "'"
+        End If
         If cbSubCategoria.SelectedValue = "000" Then
             lv_SubCat = "a.idSubCategoria = a.idSubCategoria"
         Else
@@ -101,10 +108,26 @@ Public Class frmCatalogo
             dgvResultado.Columns(10).Visible = False
             dgvResultado.Columns(11).Visible = False
             dgvResultado.Columns(12).Visible = False
+
+    
         Catch ex As Exception
             MessageBox.Show("Error cargando Catalogo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End Try
+
+        If lv_operacion = "imprimir" Then
+            Try
+                cnAccesoDatos.ExcelCatagoDinamico(lv_Cat, lv_SubCat, lv_Marca, lv_Activo, lv_Frecuente, lv_Servicio, lv_text)
+                MessageBox.Show("Archivo Creado", "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                lv_operacion = Nothing
+            Catch ex As Exception
+                MessageBox.Show("Error generando archivo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                lv_operacion = Nothing
+            End Try
+
+        End If
+
+
     End Sub
 
     Private Sub frmCatalogo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -270,12 +293,17 @@ Public Class frmCatalogo
     End Sub
 
     Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        Try
-            cnAccesoDatos.ExcelCatalogo()
-            MessageBox.Show("Archivo Creado", "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error generando archivo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        If lv_swcb = "1" Then
+            lv_operacion = "imprimir"
+            MuestraTablas()
+
+        End If
+        'Try
+        'cnAccesoDatos.ExcelCatalogo()
+        'MessageBox.Show("Archivo Creado", "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'Catch ex As Exception
+        'MessageBox.Show("Error generando archivo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'End Try
     End Sub
     Private Sub btdBuscar_Click(sender As Object, e As EventArgs) Handles btdBuscar.Click
         If lv_swcb = "1" Then

@@ -35,6 +35,9 @@ Public Class cnAccesoDatos
     Public Function OperacionesImg(ByVal sql As String, ByVal imagen As Object, ByVal imagenBck As Object)
         Return objCapaDatos.OperacionesImg(sql, imagen, imagenBck)
     End Function
+    Public Function ExcelCatagoDinamico(lv_Cat As String , lv_SubCat As String , lv_Marca As String , lv_Activo As String , lv_Frecuente As String , lv_Servicio As String , lv_text As String )
+        Return objCapaDatos.ExcelCatalogoDinamico(lv_Cat, lv_SubCat, lv_Marca, lv_Activo, lv_Frecuente, lv_Servicio, lv_text)
+    End Function
     Public Function ExcelCatalogo()
         Return objCapaDatos.ExcelCatalogo
     End Function

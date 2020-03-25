@@ -520,6 +520,66 @@ Public Class cdAccesoDatos
             End Using
         End Using
     End Function
+    Public Function ExcelCatalogoDinamico(lv_Cat As String, lv_SubCat As String, lv_Marca As String, lv_Activo As String, lv_Frecuente As String, lv_Servicio As String, lv_text As String)
+        Using cn = objConexion.conectar
+            cn.Open()
+            Using command As New MySqlCommand
+                Dim oExcel As Object
+                Dim oBook As Object
+                Dim oSheet As Object
+                Dim n As Integer = 0
+                oExcel = CreateObject("Excel.Application")
+                oBook = oExcel.Workbooks.Add
+                oSheet = oBook.Worksheets(1)
+                oSheet.Range("A1").Value = "Id"
+                oSheet.Range("B1").Value = "Descripcion"
+                oSheet.Range("C1").Value = "Categoria"
+                oSheet.Range("D1").Value = "SubCategoria"
+                oSheet.Range("E1").Value = "Marca"
+                oSheet.Range("F1").Value = "Unidad"
+                oSheet.Range("G1").Value = "Localizacion"
+                oSheet.Range("H1").Value = "Activo"
+                oSheet.Range("I1").Value = "Frecuente"
+                oSheet.Range("J1").Value = "Servicio"
+                oSheet.Range("A1:J1").Font.Bold = True
+                command.Connection = cn
+                command.CommandText = "Select a.idarticulo As Id, a.Descripcion, b.descripcion As Categoria, c.descripcion As SubCategoria, d.Descripcion As Marca, " _
+                            & "e.Descripcion As Unidad, a.Localizacion, Case a.activo When 'S' then 'SI' else 'NO' end as Activo,  " _
+                            & "case a.Frecuente when 'S' then 'SI' else 'NO' end as Frecuente, case a.servicio when 'S' then 'SI' else 'NO' end as Servicio, " _
+                            & "a.factor, a.RutaImagen, a.Imagen " _
+                       & "from adm_catalogo a " _
+                      & "inner join adm_categorias b on a.idCategoria=b.idCategoria " _
+                      & "inner join adm_subcategorias c on a.idSubCategoria=c.idSubCategoria " _
+                      & "inner join adm_marcas d on a.idMarca = d.idMarca " _
+                      & "inner join adm_unidades e on a.idUnidad = e.idUnidad " _
+                      & "where " + lv_Cat + " " _
+                        & "and " + lv_SubCat + " and " + lv_Marca + " and " + lv_Activo + " and " + lv_Frecuente + " and " + lv_Servicio + lv_text
+
+                command.CommandType = CommandType.Text
+                dr = command.ExecuteReader()
+                n = 2
+                While dr.Read()
+                    oSheet.Range("A" + CStr(n)).Value = "'" + dr("Id")
+                    oSheet.Range("B" + CStr(n)).Value = dr("Descripcion")
+                    oSheet.Range("C" + CStr(n)).Value = dr("Categoria")
+                    oSheet.Range("D" + CStr(n)).Value = dr("SubCategoria")
+                    oSheet.Range("E" + CStr(n)).Value = dr("Marca")
+                    oSheet.Range("F" + CStr(n)).Value = dr("Unidad")
+                    oSheet.Range("G" + CStr(n)).Value = dr("Localizacion")
+                    oSheet.Range("H" + CStr(n)).Value = dr("Activo")
+                    oSheet.Range("I" + CStr(n)).Value = dr("Frecuente")
+                    oSheet.Range("J" + CStr(n)).Value = dr("Servicio")
+                    n = n + 1
+                End While
+                dr.Close()
+                oSheet.Range("A1:J1" + CStr(n)).Columns.AutoFit()
+                n = 0
+                oExcel.ActiveWorkbook.SaveAs(My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\ListadoCatalogo.xlsx")
+                oExcel.Quit
+                Return True
+            End Using
+        End Using
+    End Function
     Public Function ExcelCatalogo()
         Using cn = objConexion.conectar
             cn.Open()
@@ -562,7 +622,7 @@ Public Class cdAccesoDatos
                 oSheet.Range("AC1").Value = "Frecuente"
                 oSheet.Range("AD1").Value = "Fecha Ultimo Movimiento"
                 oSheet.Range("AE1").Value = "Servicio"
-                oSheet.Range("A1:N1").Font.Bold = True
+                oSheet.Range("A1: N1").Font.Bold = True
                 command.Connection = cn
                 command.CommandText = "SELECT a.idArticulo, a.Descripcion, a.idCategoria, b.Descripcion as Categoria, a.idSubCategoria, c.descripcion as SubCategoria, a.idMarca,  " _
                                 & "       d.descripcion as Marca, a.idUnidad, e.descripcion as unidad, a.localizacion, a.StockMin, a.StockMax, a.factor, a.precioCompra, " _
