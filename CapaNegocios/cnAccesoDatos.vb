@@ -23,8 +23,8 @@ Public Class cnAccesoDatos
     Public Function ValorTabla(sql As String) As Integer
         Return objCapaDatos.ValorTabla(sql)
     End Function
-    Public Function ExcelClientes()
-        Return objCapaDatos.ExcelClientes
+    Public Function ExcelDinamicoClientes(consulta As String)
+        Return objCapaDatos.ExcelDinamicoClientes(consulta)
     End Function
     Public Function BusquedaProveedorxId(id As String)
         Return objCapaDatos.BusquedaProveedorxId(id)

@@ -6,6 +6,8 @@ Public Class frmclientes
     Dim tabla As String
     Dim n As Integer
     Dim lv_id As String
+    Dim lv_operacion As String
+    Dim lv_swcb As String
     Dim cnAccesoDatos As New cnAccesoDatos()
 
     Private Sub AbrirFormInPanel(formhijo As Object)
@@ -18,6 +20,17 @@ Public Class frmclientes
         frmPrincipal.PanelContenedor.Controls.Add(fh)
         frmPrincipal.PanelContenedor.Tag = fh
         fh.Show()
+    End Sub
+    Public Sub ExcelDinamico()
+        If lv_operacion = "imprimir" Then
+            Try
+                cnAccesoDatos.ExcelDinamicoClientes(consulta)
+                MessageBox.Show("Archivo Creado", "Clientes - Excel", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error generando archivo, " + ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+            lv_operacion = Nothing
+        End If
     End Sub
 
     Private Sub btdAgregar_Click(sender As Object, e As EventArgs) Handles btdAgregar.Click
@@ -107,20 +120,21 @@ Public Class frmclientes
     End Sub
 
     Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        Try
-            cnAccesoDatos.ExcelClientes()
-            MessageBox.Show("Archivo Creado", "Clientes - Excel", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error generando archivo, " + ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        If lv_swcb = "1" Then
+            lv_operacion = "imprimir"
+            ExcelDinamico()
+        End If
     End Sub
 
     Private Sub frmclientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lv_swcb = "0"
         consulta = "select idcliente as id, nombre, nroidentificacion as identificacion from adm_clientes"
         tabla = "adm_clientes"
         dgvResultado.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
         dgvResultado.Columns(0).Width = 60
         dgvResultado.Columns(1).Width = 270
         dgvResultado.Columns(2).Width = 120
+        ExcelDinamico()
+        lv_swcb = "1"
     End Sub
 End Class
