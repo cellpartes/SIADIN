@@ -117,14 +117,12 @@ Public Class frmCatalogo
 
         If lv_operacion = "imprimir" Then
             Try
-                cnAccesoDatos.ExcelCatagoDinamico(lv_Cat, lv_SubCat, lv_Marca, lv_Activo, lv_Frecuente, lv_Servicio, lv_text)
+                cnAccesoDatos.ExcelCatalogoDinamico(consulta)
                 MessageBox.Show("Archivo Creado", "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                lv_operacion = Nothing
             Catch ex As Exception
                 MessageBox.Show("Error generando archivo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                lv_operacion = Nothing
             End Try
-
+            lv_operacion = Nothing
         End If
 
 
