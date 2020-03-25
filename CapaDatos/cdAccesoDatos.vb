@@ -811,7 +811,7 @@ Public Class cdAccesoDatos
             End Using
         End Using
     End Function
-    Public Function ExcelSubCategoria()
+    Public Function ExcelDinamicoSubCategoria(consulta As String)
         Using cn = objConexion.conectar
             cn.Open()
             Using command As New MySqlCommand
@@ -827,9 +827,7 @@ Public Class cdAccesoDatos
                 oSheet.Range("C1").Value = "Categoria"
                 oSheet.Range("A1:C1").Font.Bold = True
                 command.Connection = cn
-                command.CommandText = "select a.idSubCategoria as id, a.Descripcion, b.descripcion as Categoria " _
-                                    & "  from adm_subcategorias a  " _
-                                    & " inner join adm_categorias b on a.idCategoria = b.idCategoria;"
+                command.CommandText = consulta
                 command.CommandType = CommandType.Text
                 dr = command.ExecuteReader()
                 n = 2

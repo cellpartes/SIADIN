@@ -7,6 +7,7 @@ Public Class frmSubCategoria
     Dim consulta As String
     Dim tabla As String
     Dim n As Integer
+    Dim lv_swcb As String
     Dim cnAccesoDatos As New cnAccesoDatos()
     Private Sub AbrirFormInPanel(formhijo As Object)
         If frmPrincipal.PanelContenedor.Controls.Count > 0 Then
@@ -19,7 +20,17 @@ Public Class frmSubCategoria
         frmPrincipal.PanelContenedor.Tag = fh
         fh.Show()
     End Sub
-
+    Public Sub ExcelDinamico()
+        If lv_operacion = "imprimir" Then
+            Try
+                cnAccesoDatos.ExcelDinamicoSubCategoria(consulta)
+                MessageBox.Show("Archivo Creado", "SubCategorias", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error generando archivo, " + ex.Message, "SubCategorias", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+            lv_operacion = Nothing
+        End If
+    End Sub
     Private Sub btdSalir_Click(sender As Object, e As EventArgs) Handles btdSalir.Click
         Me.Close()
         AbrirFormInPanel(frmGrupoMaestros)
@@ -101,15 +112,14 @@ Public Class frmSubCategoria
         dgvResultado.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0) 'DS.Tables(0)
     End Sub
     Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        Try
-            cnAccesoDatos.ExcelSubCategoria()
-            MessageBox.Show("Archivo Creado", "SubCategorias", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error generando archivo, " + ex.Message, "SubCategorias", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        If lv_swcb = "1" Then
+            lv_operacion = "imprimir"
+            ExcelDinamico()
+        End If
     End Sub
 
     Private Sub frmSubCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lv_swcb = "0"
         consulta = "select a.idSubCategoria as id, a.Descripcion, b.descripcion as Categoria " _
                  & " from adm_subcategorias a " _
                  & " inner join adm_categorias b on a.idCategoria = b.idCategoria;"
@@ -118,5 +128,7 @@ Public Class frmSubCategoria
         dgvResultado.Columns(0).Width = 80
         dgvResultado.Columns(1).Width = 175
         dgvResultado.Columns(2).Width = 175
+        ExcelDinamico()
+        lv_swcb = "1"
     End Sub
 End Class

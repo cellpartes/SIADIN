@@ -59,8 +59,8 @@ Public Class cnAccesoDatos
     Public Function BusquedaSubCategoriaxId(id As String)
         Return objCapaDatos.BusquedaSubCategoriaxId(id)
     End Function
-    Public Function ExcelSubCategoria()
-        Return objCapaDatos.ExcelSubCategoria
+    Public Function ExcelDinamicoSubCategoria(consulta As String)
+        Return objCapaDatos.ExcelDinamicoSubCategoria(consulta)
     End Function
     Public Function BusquedaVendedorxId(id As String)
         Return objCapaDatos.BusquedaVendedorxId(id)
