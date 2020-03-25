@@ -53,8 +53,8 @@ Public Class cnAccesoDatos
     Public Function BusquedaMarcaxId(id As String)
         Return objCapaDatos.BusquedaMarcaxId(id)
     End Function
-    Public Function ExcelMarcas()
-        Return objCapaDatos.ExcelMarcas
+    Public Function ExcelDinamicoMarcas(consulta As String)
+        Return objCapaDatos.ExcelDinamicoMarcas(consulta)
     End Function
     Public Function BusquedaSubCategoriaxId(id As String)
         Return objCapaDatos.BusquedaSubCategoriaxId(id)

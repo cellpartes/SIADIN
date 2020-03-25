@@ -749,7 +749,7 @@ Public Class cdAccesoDatos
             End Using
         End Using
     End Function
-    Public Function ExcelMarcas()
+    Public Function ExcelDinamicoMarcas(consulta As String)
         Using cn = objConexion.conectar
             cn.Open()
             Using command As New MySqlCommand
@@ -764,12 +764,12 @@ Public Class cdAccesoDatos
                 oSheet.Range("B1").Value = "Descripcion"
                 oSheet.Range("A1:B1").Font.Bold = True
                 command.Connection = cn
-                command.CommandText = "SELECT idMarca, Descripcion FROM adm_marcas;"
+                command.CommandText = consulta
                 command.CommandType = CommandType.Text
                 dr = command.ExecuteReader()
                 n = 2
                 While dr.Read()
-                    oSheet.Range("A" + CStr(n)).value = "'" + dr("idMarca")
+                    oSheet.Range("A" + CStr(n)).value = "'" + dr("id")
                     oSheet.Range("B" + CStr(n)).value = dr("Descripcion")
                     n = n + 1
                 End While

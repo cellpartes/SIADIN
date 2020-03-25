@@ -5,6 +5,8 @@ Public Class frmMarcas
     Dim tabla As String
     Dim n As Integer
     Dim lv_id As String
+    Dim lv_swcb As String
+    Dim lv_operacion As String
     Dim cnAccesoDatos As New cnAccesoDatos()
     Private Sub AbrirFormInPanel(formhijo As Object)
         If frmPrincipal.PanelContenedor.Controls.Count > 0 Then
@@ -18,7 +20,17 @@ Public Class frmMarcas
         fh.Show()
 
     End Sub
-
+    Public Sub ExcelDinamico()
+        If lv_operacion = "imprimir" Then
+            Try
+                cnAccesoDatos.ExcelDinamicoMarcas(consulta)
+                MessageBox.Show("Archivo Creado", "Marcas", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error generando archivo, " + ex.Message, "Marcas", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+            lv_operacion = Nothing
+        End If
+    End Sub
     Private Sub btdSalir_Click(sender As Object, e As EventArgs) Handles btdSalir.Click
         Me.Close()
         AbrirFormInPanel(frmGrupoMaestros)
@@ -87,19 +99,20 @@ Public Class frmMarcas
     End Sub
 
     Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        Try
-            cnAccesoDatos.ExcelMarcas()
-            MessageBox.Show("Archivo Creado", "Marcas", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error generando archivo, " + ex.Message, "Marcas", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        If lv_swcb = "1" Then
+            lv_operacion = "imprimir"
+            ExcelDinamico()
+        End If
     End Sub
 
     Private Sub frmMarcas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lv_swcb = "0"
         consulta = "select idMarca as id, Descripcion from adm_marcas;"
         tabla = "adm_marcas"
         dgvResultado.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
         dgvResultado.Columns(0).Width = 100
         dgvResultado.Columns(1).Width = 330
+        ExcelDinamico()
+        lv_swcb = "1"
     End Sub
 End Class
