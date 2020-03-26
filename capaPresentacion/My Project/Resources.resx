@@ -118,74 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="inventarioInicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\inventarioInicial.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AjustesInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\AjustesInventario.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\Clientes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\Ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="articulos " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\articulos .jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="consultapedidos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultapedidos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notaDeCredito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\notaDeCredito.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="caja_vacia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\caja_vacia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ajusteInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\ajusteInventario.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Servicios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\Servicios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="compra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\compra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Registro de Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\Registro de Ventas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="marcas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\marcas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="traspasoEntrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\traspasoEntrada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="categorias" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\categorias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Catalogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\Catalogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\Proveedores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Presupuestos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\Presupuestos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Vendedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\Vendedores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OrdenCompra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\OrdenCompra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EmpresasEnvio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\EmpresasEnvio.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ctasBancarias" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\ctasBancarias.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="TransferenciasAlmacen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\TransferenciasAlmacen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AperturaCaja" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icons\AperturaCaja.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Devoluciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\Devoluciones.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,7 +133,109 @@
   <data name="traspasoSalida" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\traspasoSalida.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ctasBancarias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\ctasBancarias.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Catalogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Catalogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultaclientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultaclientes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ajusteInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\ajusteInventario.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AperturaCaja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\AperturaCaja.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultaajusteInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultaajusteInventario.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultaVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\consultaVentas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vendedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Vendedores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="categorias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\categorias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultatraspasoEntrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultatraspasoEntrada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="traspasoEntrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\traspasoEntrada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultacancelacionSolicitud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultacancelacionSolicitud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marcas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\marcas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EmpresasEnvio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\EmpresasEnvio.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Registro de Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Registro de Ventas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultanotaCredito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultanotaCredito.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Presupuestos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Presupuestos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="prearticulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\prearticulo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultatraspasoSalida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultatraspasoSalida.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultatraspasoSolicitudes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultatraspasoSolicitudes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AjustesInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\AjustesInventario.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="articulos " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\articulos .jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Proveedores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrdenCompra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\OrdenCompra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultaProveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultaProveedores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultaDevoluciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultaDevoluciones.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventarioInicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\inventarioInicial.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Servicios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Servicios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caja_vacia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\caja_vacia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="compra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\compra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultaCompras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultaCompras.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Clientes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultainventarioInicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultainventarioInicial.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultaarticulosHistorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\Consultas\consultaarticulosHistorial.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

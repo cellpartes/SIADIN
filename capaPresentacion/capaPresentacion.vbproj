@@ -367,9 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -419,6 +419,20 @@
     <Content Include="Icons\codigo_qr.jpg" />
     <None Include="Icons\compra.jpg" />
     <Content Include="Icons\Consultas.png" />
+    <None Include="Icons\consultaVentas.jpg" />
+    <None Include="Icons\Consultas\consultaDevoluciones.jpg" />
+    <None Include="Icons\Consultas\consultatraspasoSalida.jpg" />
+    <None Include="Icons\Consultas\consultatraspasoEntrada.jpg" />
+    <None Include="Icons\Consultas\consultatraspasoSolicitudes.jpg" />
+    <None Include="Icons\Consultas\consultaCompras.jpg" />
+    <None Include="Icons\Consultas\consultanotaCredito.jpg" />
+    <None Include="Icons\Consultas\consultaProveedores.jpg" />
+    <None Include="Icons\Consultas\consultaclientes.jpg" />
+    <None Include="Icons\Consultas\consultacancelacionSolicitud.jpg" />
+    <None Include="Icons\Consultas\consultapedidos.jpg" />
+    <None Include="Icons\Consultas\consultainventarioInicial.jpg" />
+    <None Include="Icons\Consultas\consultaajusteInventario.jpg" />
+    <None Include="Icons\Consultas\consultaarticulosHistorial.jpg" />
     <Content Include="Icons\Courier.gif" />
     <None Include="Icons\ctasBancarias.jpg" />
     <Content Include="Icons\delete_remove_user_16733.png" />
@@ -472,5 +486,6 @@
     <None Include="Icons\Ventas.png" />
     <Content Include="Icons\VentasxUbicacion.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

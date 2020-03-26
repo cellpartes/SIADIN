@@ -32,4 +32,8 @@ Public Class frmGrupoConsultas
         'AbrirFormInPanel(VentasxUbicacion)
         frmPrincipal.txtTitulo.Text = "Consulta de Ventas por Ubiación"
     End Sub
+
+    Private Sub frmGrupoConsultas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
