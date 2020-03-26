@@ -22,6 +22,13 @@ Partial Class frmGrupoOperaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -30,14 +37,105 @@ Partial Class frmGrupoOperaciones
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btdAjustes = New System.Windows.Forms.Button()
-        Me.btdTransferencias = New System.Windows.Forms.Button()
-        Me.btdOrdenCompra = New System.Windows.Forms.Button()
-        Me.btdCompras = New System.Windows.Forms.Button()
-        Me.btdPresupuestos = New System.Windows.Forms.Button()
-        Me.btdCierreCaja = New System.Windows.Forms.Button()
-        Me.btdVentas = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'Button15
+        '
+        Me.Button15.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionProveedores
+        Me.Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button15.Location = New System.Drawing.Point(495, 189)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(112, 154)
+        Me.Button15.TabIndex = 28
+        Me.Button15.Text = "Proveedores Catálogo"
+        Me.Button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'Button14
+        '
+        Me.Button14.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionCliente
+        Me.Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button14.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button14.Location = New System.Drawing.Point(377, 189)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(112, 154)
+        Me.Button14.TabIndex = 27
+        Me.Button14.Text = "Clientes Catálogos"
+        Me.Button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionPedidios
+        Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button13.Location = New System.Drawing.Point(23, 189)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(112, 154)
+        Me.Button13.TabIndex = 26
+        Me.Button13.Text = "Pedidos Documentos"
+        Me.Button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionCotizacion
+        Me.Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button12.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button12.Location = New System.Drawing.Point(731, 17)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(112, 154)
+        Me.Button12.TabIndex = 25
+        Me.Button12.Text = "Cotización Documentos"
+        Me.Button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionTraspaso
+        Me.Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button11.Location = New System.Drawing.Point(141, 189)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(112, 154)
+        Me.Button11.TabIndex = 24
+        Me.Button11.Text = "Traspaso Solicitudes"
+        Me.Button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionCompras
+        Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.Location = New System.Drawing.Point(377, 17)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(112, 154)
+        Me.Button10.TabIndex = 23
+        Me.Button10.Text = "Compras Entradas"
+        Me.Button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionVentas
+        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Location = New System.Drawing.Point(23, 17)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(112, 154)
+        Me.Button9.TabIndex = 22
+        Me.Button9.Text = "Ventas Salidas"
+        Me.Button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button9.UseVisualStyleBackColor = True
         '
         'Button8
         '
@@ -45,7 +143,7 @@ Partial Class frmGrupoOperaciones
         Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Location = New System.Drawing.Point(731, 189)
+        Me.Button8.Location = New System.Drawing.Point(23, 362)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(112, 154)
         Me.Button8.TabIndex = 21
@@ -59,7 +157,7 @@ Partial Class frmGrupoOperaciones
         Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(613, 189)
+        Me.Button7.Location = New System.Drawing.Point(731, 189)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(112, 154)
         Me.Button7.TabIndex = 20
@@ -73,7 +171,7 @@ Partial Class frmGrupoOperaciones
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(495, 189)
+        Me.Button6.Location = New System.Drawing.Point(613, 189)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(112, 154)
         Me.Button6.TabIndex = 19
@@ -87,7 +185,7 @@ Partial Class frmGrupoOperaciones
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(377, 189)
+        Me.Button5.Location = New System.Drawing.Point(259, 189)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(112, 154)
         Me.Button5.TabIndex = 18
@@ -101,7 +199,7 @@ Partial Class frmGrupoOperaciones
         Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(259, 189)
+        Me.Button4.Location = New System.Drawing.Point(495, 17)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(112, 154)
         Me.Button4.TabIndex = 17
@@ -115,7 +213,7 @@ Partial Class frmGrupoOperaciones
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(141, 189)
+        Me.Button3.Location = New System.Drawing.Point(613, 17)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(112, 154)
         Me.Button3.TabIndex = 16
@@ -129,7 +227,7 @@ Partial Class frmGrupoOperaciones
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(23, 189)
+        Me.Button2.Location = New System.Drawing.Point(259, 17)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(112, 154)
         Me.Button2.TabIndex = 15
@@ -143,7 +241,7 @@ Partial Class frmGrupoOperaciones
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(849, 17)
+        Me.Button1.Location = New System.Drawing.Point(141, 17)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(112, 154)
         Me.Button1.TabIndex = 14
@@ -151,110 +249,19 @@ Partial Class frmGrupoOperaciones
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'btdAjustes
-        '
-        Me.btdAjustes.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.AjustesInventario
-        Me.btdAjustes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btdAjustes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btdAjustes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btdAjustes.Location = New System.Drawing.Point(731, 17)
-        Me.btdAjustes.Name = "btdAjustes"
-        Me.btdAjustes.Size = New System.Drawing.Size(112, 154)
-        Me.btdAjustes.TabIndex = 13
-        Me.btdAjustes.Text = "Ajustes"
-        Me.btdAjustes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btdAjustes.UseVisualStyleBackColor = True
-        '
-        'btdTransferencias
-        '
-        Me.btdTransferencias.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.TransferenciasAlmacen
-        Me.btdTransferencias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btdTransferencias.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btdTransferencias.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btdTransferencias.Location = New System.Drawing.Point(613, 17)
-        Me.btdTransferencias.Name = "btdTransferencias"
-        Me.btdTransferencias.Size = New System.Drawing.Size(112, 154)
-        Me.btdTransferencias.TabIndex = 12
-        Me.btdTransferencias.Text = "Transferencias"
-        Me.btdTransferencias.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btdTransferencias.UseVisualStyleBackColor = True
-        '
-        'btdOrdenCompra
-        '
-        Me.btdOrdenCompra.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.OrdenCompra
-        Me.btdOrdenCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btdOrdenCompra.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btdOrdenCompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btdOrdenCompra.Location = New System.Drawing.Point(495, 17)
-        Me.btdOrdenCompra.Name = "btdOrdenCompra"
-        Me.btdOrdenCompra.Size = New System.Drawing.Size(112, 154)
-        Me.btdOrdenCompra.TabIndex = 11
-        Me.btdOrdenCompra.Text = "Ordenes/Compra"
-        Me.btdOrdenCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btdOrdenCompra.UseVisualStyleBackColor = True
-        '
-        'btdCompras
-        '
-        Me.btdCompras.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.compra
-        Me.btdCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btdCompras.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btdCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btdCompras.Location = New System.Drawing.Point(377, 17)
-        Me.btdCompras.Name = "btdCompras"
-        Me.btdCompras.Size = New System.Drawing.Size(112, 154)
-        Me.btdCompras.TabIndex = 10
-        Me.btdCompras.Text = "Compras"
-        Me.btdCompras.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btdCompras.UseVisualStyleBackColor = True
-        '
-        'btdPresupuestos
-        '
-        Me.btdPresupuestos.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.Presupuestos
-        Me.btdPresupuestos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btdPresupuestos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btdPresupuestos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btdPresupuestos.Location = New System.Drawing.Point(259, 17)
-        Me.btdPresupuestos.Name = "btdPresupuestos"
-        Me.btdPresupuestos.Size = New System.Drawing.Size(112, 154)
-        Me.btdPresupuestos.TabIndex = 9
-        Me.btdPresupuestos.Text = "Presupuestos"
-        Me.btdPresupuestos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btdPresupuestos.UseVisualStyleBackColor = True
-        '
-        'btdCierreCaja
-        '
-        Me.btdCierreCaja.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.AperturaCaja
-        Me.btdCierreCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btdCierreCaja.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btdCierreCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btdCierreCaja.Location = New System.Drawing.Point(141, 17)
-        Me.btdCierreCaja.Name = "btdCierreCaja"
-        Me.btdCierreCaja.Size = New System.Drawing.Size(112, 154)
-        Me.btdCierreCaja.TabIndex = 8
-        Me.btdCierreCaja.Text = "Apertura/Cierre de Caja"
-        Me.btdCierreCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btdCierreCaja.UseVisualStyleBackColor = True
-        '
-        'btdVentas
-        '
-        Me.btdVentas.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.Ventas
-        Me.btdVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btdVentas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btdVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btdVentas.Location = New System.Drawing.Point(23, 17)
-        Me.btdVentas.Name = "btdVentas"
-        Me.btdVentas.Size = New System.Drawing.Size(112, 154)
-        Me.btdVentas.TabIndex = 7
-        Me.btdVentas.Text = "Ventas"
-        Me.btdVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btdVentas.UseVisualStyleBackColor = True
-        '
         'frmGrupoOperaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(1050, 401)
+        Me.ClientSize = New System.Drawing.Size(1050, 577)
+        Me.Controls.Add(Me.Button15)
+        Me.Controls.Add(Me.Button14)
+        Me.Controls.Add(Me.Button13)
+        Me.Controls.Add(Me.Button12)
+        Me.Controls.Add(Me.Button11)
+        Me.Controls.Add(Me.Button10)
+        Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
@@ -263,27 +270,12 @@ Partial Class frmGrupoOperaciones
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btdAjustes)
-        Me.Controls.Add(Me.btdTransferencias)
-        Me.Controls.Add(Me.btdOrdenCompra)
-        Me.Controls.Add(Me.btdCompras)
-        Me.Controls.Add(Me.btdPresupuestos)
-        Me.Controls.Add(Me.btdCierreCaja)
-        Me.Controls.Add(Me.btdVentas)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmGrupoOperaciones"
         Me.Text = "Devoluciones"
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents btdAjustes As Button
-    Friend WithEvents btdTransferencias As Button
-    Friend WithEvents btdOrdenCompra As Button
-    Friend WithEvents btdCompras As Button
-    Friend WithEvents btdPresupuestos As Button
-    Friend WithEvents btdCierreCaja As Button
-    Friend WithEvents btdVentas As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
@@ -292,4 +284,11 @@ Partial Class frmGrupoOperaciones
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Button11 As Button
+    Friend WithEvents Button12 As Button
+    Friend WithEvents Button13 As Button
+    Friend WithEvents Button14 As Button
+    Friend WithEvents Button15 As Button
 End Class

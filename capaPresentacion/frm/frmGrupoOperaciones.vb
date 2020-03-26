@@ -13,15 +13,19 @@ Public Class frmGrupoOperaciones
 
     End Sub
 
-    Private Sub btdVentas_Click(sender As Object, e As EventArgs) Handles btdVentas.Click
+    Private Sub btdVentas_Click(sender As Object, e As EventArgs)
         frmPrincipal.txtTitulo.Text = "Ventas"
     End Sub
 
-    Private Sub btdCierreCaja_Click(sender As Object, e As EventArgs) Handles btdCierreCaja.Click
+    Private Sub btdCierreCaja_Click(sender As Object, e As EventArgs)
         frmPrincipal.txtTitulo.Text = "Apertura/Cierre de caja"
     End Sub
 
     Private Sub frmGrupoOperaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
     End Sub
 End Class

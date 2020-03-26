@@ -467,6 +467,13 @@
     <Content Include="Icons\ok_accept_16747.png" />
     <Content Include="Icons\Operaciones.png" />
     <None Include="Icons\OrdenCompra.jpg" />
+    <None Include="Icons\operaciones\operacionVentas.jpg" />
+    <None Include="Icons\operaciones\operacionCompras.jpg" />
+    <None Include="Icons\operaciones\operacionTraspaso.jpg" />
+    <None Include="Icons\operaciones\operacionCotizacion.jpg" />
+    <None Include="Icons\operaciones\operacionPedidios.jpg" />
+    <None Include="Icons\operaciones\operacionCliente.jpg" />
+    <None Include="Icons\operaciones\operacionProveedores.jpg" />
     <Content Include="Icons\PORTADA-01.jpg" />
     <None Include="Icons\Presupuestos.jpg" />
     <None Include="Icons\prearticulo.jpg" />
