@@ -28,4 +28,9 @@ Public Class frmGrupoOperaciones
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
     End Sub
+
+    Private Sub ventasSalidas_Click(sender As Object, e As EventArgs) Handles ventasSalidas.Click
+        AbrirFormInPanel(frmVentas)
+        frmPrincipal.txtTitulo.Text = "Ventas Salidas"
+    End Sub
 End Class

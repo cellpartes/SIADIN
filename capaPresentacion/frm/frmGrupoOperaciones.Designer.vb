@@ -28,7 +28,7 @@ Partial Class frmGrupoOperaciones
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
+        Me.ventasSalidas = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -123,19 +123,19 @@ Partial Class frmGrupoOperaciones
         Me.Button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button10.UseVisualStyleBackColor = True
         '
-        'Button9
+        'ventasSalidas
         '
-        Me.Button9.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionVentas
-        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.Location = New System.Drawing.Point(23, 17)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(112, 154)
-        Me.Button9.TabIndex = 22
-        Me.Button9.Text = "Ventas Salidas"
-        Me.Button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.ventasSalidas.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.operacionVentas
+        Me.ventasSalidas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ventasSalidas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ventasSalidas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ventasSalidas.Location = New System.Drawing.Point(23, 17)
+        Me.ventasSalidas.Name = "ventasSalidas"
+        Me.ventasSalidas.Size = New System.Drawing.Size(112, 154)
+        Me.ventasSalidas.TabIndex = 22
+        Me.ventasSalidas.Text = "Ventas Salidas"
+        Me.ventasSalidas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ventasSalidas.UseVisualStyleBackColor = True
         '
         'Button8
         '
@@ -261,7 +261,7 @@ Partial Class frmGrupoOperaciones
         Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button10)
-        Me.Controls.Add(Me.Button9)
+        Me.Controls.Add(Me.ventasSalidas)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
@@ -284,7 +284,7 @@ Partial Class frmGrupoOperaciones
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
+    Friend WithEvents ventasSalidas As Button
     Friend WithEvents Button10 As Button
     Friend WithEvents Button11 As Button
     Friend WithEvents Button12 As Button

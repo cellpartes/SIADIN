@@ -1,23 +1,18 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocios
+Imports CapaDatos
+Imports MySql.Data.MySqlClient
 Imports System.IO
-Public Class frmCatalogo
-    Dim lv_operacion As String
-    Dim drA As System.Data.IDataReader
-    Dim drE As System.Data.IDataReader
+Public Class frmDetalleVentas
     Dim lv_sw As String
     Dim lv_swcb As String
-    Dim lv_busqueda As String
     Dim consulta As String
     Dim tabla As String
     Dim n As Integer
     Dim lv_id As String
-    Dim sql_ins As String
-    Dim ld_fecha As String
-    Dim ln_cant As Integer
+    'Dim dr As System.Data.IDataReader
     Dim cnAccesoDatos As New cnAccesoDatos()
-
-
+    Dim objConexion As New cdConexion
     Private Sub AbrirFormInPanel(formhijo As Object)
         If frmPrincipal.PanelContenedor.Controls.Count > 0 Then
             frmPrincipal.PanelContenedor.Controls.RemoveAt(0)
@@ -28,7 +23,6 @@ Public Class frmCatalogo
         frmPrincipal.PanelContenedor.Controls.Add(fh)
         frmPrincipal.PanelContenedor.Tag = fh
         fh.Show()
-
     End Sub
     Public Sub MuestraTablas()
         Dim lv_Cat As String
@@ -108,27 +102,62 @@ Public Class frmCatalogo
             dgvResultado.Columns(10).Visible = False
             dgvResultado.Columns(11).Visible = False
             dgvResultado.Columns(12).Visible = False
-
-
         Catch ex As Exception
             MessageBox.Show("Error cargando Catalogo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End Try
+        ColorTabla(dgvResultado)
+    End Sub
+    Public Sub ColorTabla(ByVal dgv As DataGridView)
+        Try
+            With dgv
+                .RowsDefaultCellStyle.BackColor = Color.WhiteSmoke
+                .AlternatingRowsDefaultCellStyle.BackColor = Color.White
+                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            End With
+        Catch ex As Exception
 
-        If lv_operacion = "imprimir" Then
-            Try
-                cnAccesoDatos.ExcelCatalogoDinamico(consulta)
-                MessageBox.Show("Archivo Creado", "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Catch ex As Exception
-                MessageBox.Show("Error generando archivo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End Try
-            lv_operacion = Nothing
-        End If
-
-
+        End Try
+    End Sub
+    Public Sub RecuperarImagen(consulta As String)
+        Dim dr As MySqlDataReader
+        Using cn = objConexion.conectar
+            cn.Open()
+            Using cmd As New MySqlCommand
+                Dim Imag As Byte()
+                cmd.Connection = cn
+                cmd.CommandText = consulta
+                cmd.CommandType = CommandType.Text
+                dr = cmd.ExecuteReader()
+                While dr.Read
+                    Imag = dr("Imagen")
+                    Me.PictureBox1.Image = Bytes_Imagen(Imag)
+                End While
+            End Using
+        End Using
+    End Sub
+    Private Function Bytes_Imagen(ByVal Imagen As Byte()) As Image
+        Try
+            'si hay imagen
+            If Not Imagen Is Nothing Then
+                'caturar array con memorystream hacia Bin
+                Dim Bin As New MemoryStream(Imagen)
+                'con el método FroStream de Image obtenemos imagen
+                Dim Resultado As Image = Image.FromStream(Bin)
+                'y la retornamos
+                Return Resultado
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+    Private Sub btdCancelar_Click(sender As Object, e As EventArgs) Handles btdCancelar.Click
+        Close()
     End Sub
 
-    Private Sub frmCatalogo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmDetalleVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lv_swcb = "0"
 
         Dim dtServicio As DataTable = New DataTable("TablaServicio")
@@ -284,98 +313,58 @@ Public Class frmCatalogo
         End If
     End Sub
 
-    Private Sub btdSalir_Click(sender As Object, e As EventArgs) Handles btdSalir.Click
-        Close()
-        AbrirFormInPanel(frmGrupoMaestros)
-        frmPrincipal.txtTitulo.Text = "Maestros"
-    End Sub
-
-    Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
-        If lv_swcb = "1" Then
-            lv_operacion = "imprimir"
-            MuestraTablas()
-
-        End If
-        'Try
-        'cnAccesoDatos.ExcelCatalogo()
-        'MessageBox.Show("Archivo Creado", "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        'Catch ex As Exception
-        'MessageBox.Show("Error generando archivo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        'End Try
-    End Sub
-    Private Sub btdBuscar_Click(sender As Object, e As EventArgs) Handles btdBuscar.Click
-        If lv_swcb = "1" Then
-            MuestraTablas()
-        End If
-    End Sub
-    Private Sub btdEliminar_Click(sender As Object, e As EventArgs) Handles btdEliminar.Click
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        Dim descripcion As String
+        Dim existe As Boolean = False
+        Dim total As Integer
         Try
             n = dgvResultado.CurrentRow.Index
         Catch ex As Exception
             n = 0
         End Try
-        If dgvResultado.Rows(n).Cells(0).Value <> "" Then
-            Dim result As DialogResult = MessageBox.Show("Desea Eliminar el Articulo " + dgvResultado.Rows(n).Cells(0).Value + "?", "Catalogo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If result = "6" Then
-                Try
-                    consulta = "delete from adm_catalogo where idArticulo = '" & dgvResultado.Rows(n).Cells(0).Value & "';"
-                    cnAccesoDatos.DMLTabla(consulta)
-                Catch ex As Exception
-                    MessageBox.Show("Error eliminando Articulo, " + ex.Message, "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Exit Sub
-                End Try
-                MessageBox.Show("Articulo Eliminado", "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                MuestraTablas()
+
+        lv_id = dgvResultado.Rows(n).Cells(0).Value
+        descripcion = dgvResultado.Rows(n).Cells(1).Value
+        Close()
+        AbrirFormInPanel(frmVentas)
+        frmVentas.TextBox1.Text = lv_id
+        'frmVentas.dgvResultado.Rows.Add(1, lv_id, descripcion, 5, 0, 100, 15)
+
+        For Each itm As DataGridViewRow In frmVentas.dgvResultado.Rows
+            If itm.Cells(1).Value = lv_id Then
+                total = itm.Cells(0).Value
+                itm.Cells(0).Value = total + 1
+                existe = True
             End If
+        Next
+        If frmVentas.dgvResultado.Rows.Count > 0 AndAlso existe = True Then
+            MsgBox("Ya existe")
+            'frmVentas.dgvResultado.Item(1, frmVentas.dgvResultado.CurrentRow.Index).Value = "lol"
+
         Else
-            MessageBox.Show("Debe seleccionar un Articulo", "Catalogo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            frmVentas.dgvResultado.Rows.Add(1, lv_id, descripcion, 5, 0, 100, 15)
         End If
     End Sub
-    Private Sub btdEditar_Click(sender As Object, e As EventArgs) Handles btdEditar.Click
+
+    Private Sub txtBusca_TextChanged(sender As Object, e As EventArgs) Handles txtBusca.TextChanged
+
+    End Sub
+
+    Private Sub txtBusca_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBusca.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            If lv_swcb = "1" Then
+                MuestraTablas()
+            End If
+        End If
+    End Sub
+
+    Private Sub dgvResultado_SelectionChanged(sender As Object, e As EventArgs) Handles dgvResultado.SelectionChanged
         Try
             n = dgvResultado.CurrentRow.Index
         Catch ex As Exception
             n = 0
         End Try
         lv_id = dgvResultado.Rows(n).Cells(0).Value
-        Close()
-        AbrirFormInPanel(frmDetalleCatalogo)
-        frmPrincipal.txtTitulo.Text = "Actualizar Articulo"
-        frmDetalleCatalogo.Text = "Actualizar"
-        frmDetalleCatalogo.txtId.Text = lv_id
-        frmDetalleCatalogo.txtId.Enabled = False
-    End Sub
-    Private Sub btdAgregar_Click(sender As Object, e As EventArgs) Handles btdAgregar.Click
-        Close()
-        AbrirFormInPanel(frmDetalleCatalogo)
-        frmPrincipal.txtTitulo.Text = "Agregar Articulo"
-        frmDetalleCatalogo.Text = "Agregar"
-    End Sub
-    Private Sub dgvResultado_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvResultado.CellMouseClick
-        Try
-            n = dgvResultado.CurrentRow.Index
-        Catch ex As Exception
-            n = 0
-        End Try
-        txtLocalizacion.Text = dgvResultado.Rows(n).Cells(6).Value
-        txtUnidad.Text = dgvResultado.Rows(n).Cells(5).Value
-        txtFactor.Text = dgvResultado.Rows(n).Cells(10).Value
-        If dgvResultado.Rows(n).Cells(11).Value <> "" Then
-            imgArticulo.Image = dgvResultado.CurrentRow.Cells(12).FormattedValue
-        Else
-            imgArticulo.Image = Nothing
-        End If
-    End Sub
-
-    Private Sub ToolStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
+        RecuperarImagen("Select Imagen from adm_catalogo where idArticulo = '" & lv_id & "'")
     End Sub
 End Class

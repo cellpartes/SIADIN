@@ -189,6 +189,12 @@
     <Compile Include="frm\frmDetalleSubCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm\frmDetalleVentas.Designer.vb">
+      <DependentUpon>frmDetalleVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmDetalleVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm\frmEmpresasEnvio.designer.vb">
       <DependentUpon>frmEmpresasEnvio.vb</DependentUpon>
     </Compile>
@@ -267,6 +273,12 @@
     <Compile Include="frm\frmVendedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm\frmVentas.Designer.vb">
+      <DependentUpon>frmVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frmVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -326,6 +338,9 @@
     <EmbeddedResource Include="frm\frmDetalleSubCategoria.resx">
       <DependentUpon>frmDetalleSubCategoria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmDetalleVentas.resx">
+      <DependentUpon>frmDetalleVentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\frmEmpresasEnvio.resx">
       <DependentUpon>frmEmpresasEnvio.vb</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frmVendedores.resx">
       <DependentUpon>frmVendedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frmVentas.resx">
+      <DependentUpon>frmVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -440,6 +458,13 @@
     <Content Include="Icons\editar.jpg" />
     <Content Include="Icons\elimnar.jpg" />
     <Content Include="Icons\EmpresasEnvio.gif" />
+    <None Include="Icons\iconos menu\menuCliente.jpg" />
+    <None Include="Icons\iconos menu\menuVendedor.jpg" />
+    <None Include="Icons\iconos menu\menuCotizacion.jpg" />
+    <None Include="Icons\iconos menu\menuBuscar.jpg" />
+    <None Include="Icons\iconos menu\menuEditar.jpg" />
+    <None Include="Icons\iconos menu\menuRemover.jpg" />
+    <None Include="Icons\iconos menu\menuCerrar.jpg" />
     <Content Include="Icons\imprimir.jpg" />
     <None Include="Icons\inventarioInicial.jpg" />
     <Content Include="Icons\Login.jpg" />

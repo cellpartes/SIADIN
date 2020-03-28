@@ -343,6 +343,76 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property menuBuscar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menuBuscar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menuCerrar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menuCerrar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menuCliente() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menuCliente", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menuCotizacion() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menuCotizacion", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menuEditar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menuEditar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menuRemover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menuRemover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menuVendedor() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menuVendedor", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property notaDeCredito() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("notaDeCredito", resourceCulture)
