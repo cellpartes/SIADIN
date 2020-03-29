@@ -43,6 +43,10 @@ Partial Class frmVentas
         Me.btnBuscar2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dgvResultado = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,11 +54,8 @@ Partial Class frmVentas
         Me.Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Importe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Imagen = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblTotal = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -207,6 +208,7 @@ Partial Class frmVentas
         Me.PictureBox1.Location = New System.Drawing.Point(64, 67)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(150, 134)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 72
         Me.PictureBox1.TabStop = False
         '
@@ -228,7 +230,7 @@ Partial Class frmVentas
         Me.dgvResultado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvResultado.ColumnHeadersHeight = 30
         Me.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvResultado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cant, Me.Id, Me.Descripcion, Me.Exis, Me.Desc, Me.Precio_U, Me.Importe, Me.total})
+        Me.dgvResultado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cant, Me.Id, Me.Descripcion, Me.Exis, Me.Desc, Me.Precio_U, Me.Importe, Me.Imagen, Me.total})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -252,8 +254,52 @@ Partial Class frmVentas
         Me.dgvResultado.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvResultado.RowHeadersVisible = False
         Me.dgvResultado.RowTemplate.Height = 40
-        Me.dgvResultado.Size = New System.Drawing.Size(956, 295)
+        Me.dgvResultado.Size = New System.Drawing.Size(974, 295)
         Me.dgvResultado.TabIndex = 80
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.lblTotal)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(53, 515)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(967, 66)
+        Me.Panel1.TabIndex = 81
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label3.Location = New System.Drawing.Point(855, 17)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(109, 31)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "SOLES"
+        '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblTotal.Location = New System.Drawing.Point(713, 17)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(115, 31)
+        Me.lblTotal.TabIndex = 1
+        Me.lblTotal.Text = "S/  0.00"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label1.Location = New System.Drawing.Point(593, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(97, 31)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Total :"
         '
         'Cant
         '
@@ -310,6 +356,13 @@ Partial Class frmVentas
         Me.Importe.ReadOnly = True
         Me.Importe.Width = 110
         '
+        'Imagen
+        '
+        Me.Imagen.HeaderText = "Imagen"
+        Me.Imagen.Name = "Imagen"
+        Me.Imagen.ReadOnly = True
+        Me.Imagen.Width = 72
+        '
         'total
         '
         Me.total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
@@ -317,50 +370,6 @@ Partial Class frmVentas
         Me.total.Name = "total"
         Me.total.ReadOnly = True
         Me.total.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.lblTotal)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(53, 515)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(967, 66)
-        Me.Panel1.TabIndex = 81
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(855, 17)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 31)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "SOLES"
-        '
-        'lblTotal
-        '
-        Me.lblTotal.AutoSize = True
-        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblTotal.Location = New System.Drawing.Point(713, 17)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(115, 31)
-        Me.lblTotal.TabIndex = 1
-        Me.lblTotal.Text = "S/  0.00"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(593, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(97, 31)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Total :"
         '
         'frmVentas
         '
@@ -424,5 +433,6 @@ Partial Class frmVentas
     Friend WithEvents Desc As DataGridViewTextBoxColumn
     Friend WithEvents Precio_U As DataGridViewTextBoxColumn
     Friend WithEvents Importe As DataGridViewTextBoxColumn
+    Friend WithEvents Imagen As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
 End Class

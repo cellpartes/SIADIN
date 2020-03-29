@@ -33,6 +33,7 @@ Public Class frmVentas
     End Sub
     Private Sub frmVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ColorTabla(dgvResultado)
+        dgvResultado.Columns(8).Visible = False
         dgvResultado.Columns(7).Visible = False
     End Sub
     Private Sub dgvResultado_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgvResultado.RowsAdded
@@ -93,6 +94,18 @@ Public Class frmVentas
             lblTotal.Text = Format(total, "S/ #,##0.00")
         Else
             lblTotal.Text = "S/ 0.00"
+            PictureBox1.Image = Nothing
+        End If
+    End Sub
+
+    Private Sub dgvResultado_SelectionChanged(sender As Object, e As EventArgs) Handles dgvResultado.SelectionChanged
+        Try
+            n = dgvResultado.CurrentRow.Index
+        Catch ex As Exception
+            n = 0
+        End Try
+        If dgvResultado.Rows.Count > 0 Then
+            PictureBox1.Image = dgvResultado.CurrentRow.Cells(7).Value
         End If
     End Sub
 End Class

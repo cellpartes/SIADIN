@@ -10,6 +10,7 @@ Public Class frmDetalleVentas
     Dim tabla As String
     Dim n As Integer
     Dim lv_id As String
+    Dim imagen As Bitmap
     'Dim dr As System.Data.IDataReader
     Dim cnAccesoDatos As New cnAccesoDatos()
     Dim objConexion As New cdConexion
@@ -120,31 +121,26 @@ Public Class frmDetalleVentas
         End Try
     End Sub
     Public Sub RecuperarImagen(consulta As String)
-        Dim dr As MySqlDataReader
         Using cn = objConexion.conectar
+            Dim dr As MySqlDataReader
             cn.Open()
             Using cmd As New MySqlCommand
                 Dim Imag As Byte()
                 cmd.Connection = cn
                 cmd.CommandText = consulta
-                cmd.CommandType = CommandType.Text
                 dr = cmd.ExecuteReader()
                 While dr.Read
                     Imag = dr("Imagen")
-                    Me.PictureBox1.Image = Bytes_Imagen(Imag)
+                    PictureBox1.Image = Bytes_Imagen(Imag)
                 End While
             End Using
         End Using
     End Sub
     Private Function Bytes_Imagen(ByVal Imagen As Byte()) As Image
         Try
-            'si hay imagen
             If Not Imagen Is Nothing Then
-                'caturar array con memorystream hacia Bin
                 Dim Bin As New MemoryStream(Imagen)
-                'con el método FroStream de Image obtenemos imagen
                 Dim Resultado As Image = Image.FromStream(Bin)
-                'y la retornamos
                 Return Resultado
             Else
                 Return Nothing
@@ -317,6 +313,7 @@ Public Class frmDetalleVentas
         Dim descripcion As String
         Dim existe As Boolean = False
         Dim total As Integer
+
         Try
             n = dgvResultado.CurrentRow.Index
         Catch ex As Exception
@@ -328,7 +325,7 @@ Public Class frmDetalleVentas
         Close()
         AbrirFormInPanel(frmVentas)
         frmVentas.TextBox1.Text = lv_id
-        'frmVentas.dgvResultado.Rows.Add(1, lv_id, descripcion, 5, 0, 100, 15)
+        'frmVentas.PictureBox1.Image = PictureBox1.Image
 
         For Each itm As DataGridViewRow In frmVentas.dgvResultado.Rows
             If itm.Cells(1).Value = lv_id Then
@@ -338,11 +335,9 @@ Public Class frmDetalleVentas
             End If
         Next
         If frmVentas.dgvResultado.Rows.Count > 0 AndAlso existe = True Then
-            MsgBox("Ya existe")
-            'frmVentas.dgvResultado.Item(1, frmVentas.dgvResultado.CurrentRow.Index).Value = "lol"
-
+            'MsgBox("Ya existe")
         Else
-            frmVentas.dgvResultado.Rows.Add(1, lv_id, descripcion, 5, 0, 100, 15)
+            frmVentas.dgvResultado.Rows.Add(1, lv_id, descripcion, 5, 0, 100, 15, imagen)
         End If
     End Sub
 
@@ -365,6 +360,13 @@ Public Class frmDetalleVentas
             n = 0
         End Try
         lv_id = dgvResultado.Rows(n).Cells(0).Value
-        RecuperarImagen("Select Imagen from adm_catalogo where idArticulo = '" & lv_id & "'")
+        If dgvResultado.Rows(n).Cells(11).Value <> "" Then
+            PictureBox1.Image = dgvResultado.CurrentRow.Cells(12).FormattedValue
+            imagen = dgvResultado.CurrentRow.Cells(12).FormattedValue
+        Else
+            PictureBox1.Image = Nothing
+            imagen = Nothing
+        End If
+        'RecuperarImagen("Select Imagen from adm_catalogo where idArticulo = '" & lv_id & "';")
     End Sub
 End Class
