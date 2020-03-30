@@ -465,6 +465,9 @@
     <None Include="Icons\iconos menu\menuEditar.jpg" />
     <None Include="Icons\iconos menu\menuRemover.jpg" />
     <None Include="Icons\iconos menu\menuCerrar.jpg" />
+    <None Include="Icons\iconos menu\menuTicket.jpg" />
+    <None Include="Icons\iconos menu\menuEditar2.jpg" />
+    <None Include="Icons\iconos menu\menuAgregar.jpg" />
     <Content Include="Icons\imprimir.jpg" />
     <None Include="Icons\inventarioInicial.jpg" />
     <Content Include="Icons\Login.jpg" />

@@ -26,27 +26,18 @@ Partial Class frmVentas
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.btdBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.btdEditar = New System.Windows.Forms.ToolStripButton()
-        Me.btdEliminar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
-        Me.btnCerrar = New System.Windows.Forms.ToolStripButton()
-        Me.btnCliente = New System.Windows.Forms.ToolStripButton()
-        Me.btnVendedor = New System.Windows.Forms.ToolStripButton()
-        Me.btnCotizacion = New System.Windows.Forms.ToolStripButton()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtCliente = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar2 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dgvResultado = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,11 +47,25 @@ Partial Class frmVentas
         Me.Importe = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Imagen = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnBuscar2 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnCerrar = New System.Windows.Forms.ToolStripButton()
+        Me.btnCliente = New System.Windows.Forms.ToolStripButton()
+        Me.btnVendedor = New System.Windows.Forms.ToolStripButton()
+        Me.btnCotizacion = New System.Windows.Forms.ToolStripButton()
+        Me.btdBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.btdEditar = New System.Windows.Forms.ToolStripButton()
+        Me.btdEliminar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvResultado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -73,33 +78,6 @@ Partial Class frmVentas
         Me.ToolStrip1.Size = New System.Drawing.Size(1050, 52)
         Me.ToolStrip1.TabIndex = 69
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'btdBuscar
-        '
-        Me.btdBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdBuscar.Image = Global.capaPresentacion.My.Resources.Resources.menuBuscar
-        Me.btdBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdBuscar.Name = "btdBuscar"
-        Me.btdBuscar.Size = New System.Drawing.Size(49, 49)
-        Me.btdBuscar.Text = "Buscar Articulo"
-        '
-        'btdEditar
-        '
-        Me.btdEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdEditar.Image = Global.capaPresentacion.My.Resources.Resources.menuEditar
-        Me.btdEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdEditar.Name = "btdEditar"
-        Me.btdEditar.Size = New System.Drawing.Size(49, 49)
-        Me.btdEditar.Text = "Editar Información del Servicio"
-        '
-        'btdEliminar
-        '
-        Me.btdEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdEliminar.Image = Global.capaPresentacion.My.Resources.Resources.menuRemover
-        Me.btdEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdEliminar.Name = "btdEliminar"
-        Me.btdEliminar.Size = New System.Drawing.Size(49, 49)
-        Me.btdEliminar.Text = "Eliminar Servicio"
         '
         'ToolStrip2
         '
@@ -115,62 +93,21 @@ Partial Class frmVentas
         Me.ToolStrip2.TabIndex = 71
         Me.ToolStrip2.Text = "ToolStrip2"
         '
-        'btnCerrar
-        '
-        Me.btnCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnCerrar.Image = Global.capaPresentacion.My.Resources.Resources.menuCerrar
-        Me.btnCerrar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(47, 49)
-        Me.btnCerrar.Text = "Cerrar"
-        '
-        'btnCliente
-        '
-        Me.btnCliente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnCliente.Image = Global.capaPresentacion.My.Resources.Resources.menuCliente
-        Me.btnCliente.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnCliente.Name = "btnCliente"
-        Me.btnCliente.Size = New System.Drawing.Size(47, 49)
-        Me.btnCliente.Text = "Cliente"
-        '
-        'btnVendedor
-        '
-        Me.btnVendedor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnVendedor.Image = Global.capaPresentacion.My.Resources.Resources.menuVendedor
-        Me.btnVendedor.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnVendedor.Name = "btnVendedor"
-        Me.btnVendedor.Size = New System.Drawing.Size(47, 49)
-        Me.btnVendedor.Text = "Vendedor"
-        '
-        'btnCotizacion
-        '
-        Me.btnCotizacion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnCotizacion.Image = Global.capaPresentacion.My.Resources.Resources.menuCotizacion
-        Me.btnCotizacion.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnCotizacion.Name = "btnCotizacion"
-        Me.btnCotizacion.Size = New System.Drawing.Size(47, 49)
-        Me.btnCotizacion.Text = "Cotización"
-        '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(292, 71)
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(275, 71)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(198, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(198, 22)
         Me.TextBox1.TabIndex = 73
         '
-        'TextBox2
+        'txtCliente
         '
-        Me.TextBox2.Location = New System.Drawing.Point(292, 118)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(198, 20)
-        Me.TextBox2.TabIndex = 74
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(292, 181)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(297, 20)
-        Me.TextBox3.TabIndex = 75
+        Me.txtCliente.Location = New System.Drawing.Point(275, 181)
+        Me.txtCliente.Name = "txtCliente"
+        Me.txtCliente.ReadOnly = True
+        Me.txtCliente.Size = New System.Drawing.Size(297, 20)
+        Me.txtCliente.TabIndex = 75
         '
         'TextBox4
         '
@@ -192,25 +129,6 @@ Partial Class frmVentas
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(91, 20)
         Me.TextBox6.TabIndex = 78
-        '
-        'btnBuscar2
-        '
-        Me.btnBuscar2.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.menuBuscar
-        Me.btnBuscar2.Location = New System.Drawing.Point(496, 69)
-        Me.btnBuscar2.Name = "btnBuscar2"
-        Me.btnBuscar2.Size = New System.Drawing.Size(43, 35)
-        Me.btnBuscar2.TabIndex = 79
-        Me.btnBuscar2.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(64, 67)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(150, 134)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 72
-        Me.PictureBox1.TabStop = False
         '
         'dgvResultado
         '
@@ -301,6 +219,13 @@ Partial Class frmVentas
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Total :"
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(770, 67)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 82
+        '
         'Cant
         '
         Me.Cant.HeaderText = "Cant"
@@ -358,6 +283,7 @@ Partial Class frmVentas
         '
         'Imagen
         '
+        Me.Imagen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Imagen.HeaderText = "Imagen"
         Me.Imagen.Name = "Imagen"
         Me.Imagen.ReadOnly = True
@@ -371,19 +297,132 @@ Partial Class frmVentas
         Me.total.ReadOnly = True
         Me.total.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(275, 117)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(198, 21)
+        Me.ComboBox1.TabIndex = 83
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.capaPresentacion.My.Resources.Resources.menuTicket
+        Me.PictureBox3.Location = New System.Drawing.Point(234, 118)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(24, 20)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 85
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.capaPresentacion.My.Resources.Resources.menuCliente
+        Me.PictureBox2.Location = New System.Drawing.Point(234, 181)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(24, 20)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 84
+        Me.PictureBox2.TabStop = False
+        '
+        'btnBuscar2
+        '
+        Me.btnBuscar2.BackgroundImage = Global.capaPresentacion.My.Resources.Resources.menuBuscar
+        Me.btnBuscar2.Location = New System.Drawing.Point(479, 69)
+        Me.btnBuscar2.Name = "btnBuscar2"
+        Me.btnBuscar2.Size = New System.Drawing.Size(43, 35)
+        Me.btnBuscar2.TabIndex = 79
+        Me.btnBuscar2.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Location = New System.Drawing.Point(64, 67)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(150, 134)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 72
+        Me.PictureBox1.TabStop = False
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnCerrar.Image = Global.capaPresentacion.My.Resources.Resources.menuCerrar
+        Me.btnCerrar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(47, 49)
+        Me.btnCerrar.Text = "Cerrar"
+        '
+        'btnCliente
+        '
+        Me.btnCliente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnCliente.Image = Global.capaPresentacion.My.Resources.Resources.menuCliente
+        Me.btnCliente.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnCliente.Name = "btnCliente"
+        Me.btnCliente.Size = New System.Drawing.Size(47, 49)
+        Me.btnCliente.Text = "Cliente"
+        '
+        'btnVendedor
+        '
+        Me.btnVendedor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnVendedor.Image = Global.capaPresentacion.My.Resources.Resources.menuVendedor
+        Me.btnVendedor.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnVendedor.Name = "btnVendedor"
+        Me.btnVendedor.Size = New System.Drawing.Size(47, 49)
+        Me.btnVendedor.Text = "Vendedor"
+        '
+        'btnCotizacion
+        '
+        Me.btnCotizacion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnCotizacion.Image = Global.capaPresentacion.My.Resources.Resources.menuCotizacion
+        Me.btnCotizacion.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnCotizacion.Name = "btnCotizacion"
+        Me.btnCotizacion.Size = New System.Drawing.Size(47, 49)
+        Me.btnCotizacion.Text = "Cotización"
+        '
+        'btdBuscar
+        '
+        Me.btdBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btdBuscar.Image = Global.capaPresentacion.My.Resources.Resources.menuBuscar
+        Me.btdBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btdBuscar.Name = "btdBuscar"
+        Me.btdBuscar.Size = New System.Drawing.Size(49, 49)
+        Me.btdBuscar.Text = "Buscar Articulo"
+        '
+        'btdEditar
+        '
+        Me.btdEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btdEditar.Image = Global.capaPresentacion.My.Resources.Resources.menuEditar
+        Me.btdEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btdEditar.Name = "btdEditar"
+        Me.btdEditar.Size = New System.Drawing.Size(49, 49)
+        Me.btdEditar.Text = "Editar Información del Servicio"
+        '
+        'btdEliminar
+        '
+        Me.btdEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btdEliminar.Image = Global.capaPresentacion.My.Resources.Resources.menuRemover
+        Me.btdEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btdEliminar.Name = "btdEliminar"
+        Me.btdEliminar.Size = New System.Drawing.Size(49, 49)
+        Me.btdEliminar.Text = "Eliminar Servicio"
+        '
         'frmVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1050, 581)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.dgvResultado)
         Me.Controls.Add(Me.btnBuscar2)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtCliente)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ToolStrip2)
@@ -395,10 +434,12 @@ Partial Class frmVentas
         Me.ToolStrip1.PerformLayout()
         Me.ToolStrip2.ResumeLayout(False)
         Me.ToolStrip2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvResultado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -415,8 +456,7 @@ Partial Class frmVentas
     Friend WithEvents btnCerrar As ToolStripButton
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtCliente As TextBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox6 As TextBox
@@ -426,6 +466,7 @@ Partial Class frmVentas
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents lblTotal As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Cant As DataGridViewTextBoxColumn
     Friend WithEvents Id As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
@@ -435,4 +476,7 @@ Partial Class frmVentas
     Friend WithEvents Importe As DataGridViewTextBoxColumn
     Friend WithEvents Imagen As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

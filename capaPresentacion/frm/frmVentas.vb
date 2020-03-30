@@ -108,4 +108,8 @@ Public Class frmVentas
             PictureBox1.Image = dgvResultado.CurrentRow.Cells(7).Value
         End If
     End Sub
+
+    Private Sub txtCliente_Click(sender As Object, e As EventArgs) Handles txtCliente.Click
+        frmDetalleClientes.Show()
+    End Sub
 End Class

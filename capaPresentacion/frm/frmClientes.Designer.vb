@@ -22,162 +22,165 @@ Partial Class frmclientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmclientes))
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.btdAgregar = New System.Windows.Forms.ToolStripButton()
-        Me.btdEditar = New System.Windows.Forms.ToolStripButton()
-        Me.btdEliminar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.txtBusca = New System.Windows.Forms.ToolStripTextBox()
-        Me.btdBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btdImprimir = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btdSalir = New System.Windows.Forms.ToolStripButton()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.dgvResultado = New System.Windows.Forms.DataGridView()
-        Me.ToolStrip1.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.txtBusca = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btdCancelar = New System.Windows.Forms.PictureBox()
+        Me.btdAceptar = New System.Windows.Forms.Button()
         CType(Me.dgvResultado, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btdCancelar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(45, 45)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btdAgregar, Me.btdEditar, Me.btdEliminar, Me.ToolStripSeparator1, Me.btdImprimir, Me.ToolStripSeparator3, Me.txtBusca, Me.btdBuscar, Me.ToolStripSeparator2, Me.btdSalir})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(633, 52)
-        Me.ToolStrip1.TabIndex = 66
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'btdAgregar
-        '
-        Me.btdAgregar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdAgregar.Image = CType(resources.GetObject("btdAgregar.Image"), System.Drawing.Image)
-        Me.btdAgregar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdAgregar.Name = "btdAgregar"
-        Me.btdAgregar.Size = New System.Drawing.Size(49, 49)
-        Me.btdAgregar.Text = "Agregar Cliente"
-        '
-        'btdEditar
-        '
-        Me.btdEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdEditar.Image = CType(resources.GetObject("btdEditar.Image"), System.Drawing.Image)
-        Me.btdEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdEditar.Name = "btdEditar"
-        Me.btdEditar.Size = New System.Drawing.Size(49, 49)
-        Me.btdEditar.Text = "Editar Información del Cliente"
-        '
-        'btdEliminar
-        '
-        Me.btdEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdEliminar.Image = CType(resources.GetObject("btdEliminar.Image"), System.Drawing.Image)
-        Me.btdEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdEliminar.Name = "btdEliminar"
-        Me.btdEliminar.Size = New System.Drawing.Size(49, 49)
-        Me.btdEliminar.Text = "Eliminar Cliente"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 52)
-        '
-        'txtBusca
-        '
-        Me.txtBusca.Name = "txtBusca"
-        Me.txtBusca.Size = New System.Drawing.Size(150, 52)
-        '
-        'btdBuscar
-        '
-        Me.btdBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdBuscar.Image = CType(resources.GetObject("btdBuscar.Image"), System.Drawing.Image)
-        Me.btdBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdBuscar.Name = "btdBuscar"
-        Me.btdBuscar.Size = New System.Drawing.Size(49, 49)
-        Me.btdBuscar.Text = "Buscar Cliente"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 52)
-        '
-        'btdImprimir
-        '
-        Me.btdImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdImprimir.Image = CType(resources.GetObject("btdImprimir.Image"), System.Drawing.Image)
-        Me.btdImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdImprimir.Name = "btdImprimir"
-        Me.btdImprimir.Size = New System.Drawing.Size(49, 49)
-        Me.btdImprimir.Text = "Imprimir Listado de Clientes"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 52)
-        '
-        'btdSalir
-        '
-        Me.btdSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btdSalir.Image = CType(resources.GetObject("btdSalir.Image"), System.Drawing.Image)
-        Me.btdSalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btdSalir.Name = "btdSalir"
-        Me.btdSalir.Size = New System.Drawing.Size(49, 49)
-        Me.btdSalir.Text = "Salir"
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.GroupBox4.Controls.Add(Me.dgvResultado)
-        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 55)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(517, 228)
-        Me.GroupBox4.TabIndex = 70
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Resultado"
         '
         'dgvResultado
         '
-        Me.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvResultado.Location = New System.Drawing.Point(6, 21)
+        Me.dgvResultado.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dgvResultado.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgvResultado.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvResultado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvResultado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvResultado.ColumnHeadersHeight = 30
+        Me.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvResultado.EnableHeadersVisualStyles = False
+        Me.dgvResultado.GridColor = System.Drawing.SystemColors.Control
+        Me.dgvResultado.Location = New System.Drawing.Point(13, 130)
         Me.dgvResultado.Name = "dgvResultado"
         Me.dgvResultado.ReadOnly = True
-        Me.dgvResultado.Size = New System.Drawing.Size(482, 192)
-        Me.dgvResultado.TabIndex = 0
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvResultado.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvResultado.RowHeadersVisible = False
+        Me.dgvResultado.RowHeadersWidth = 50
+        Me.dgvResultado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue
+        Me.dgvResultado.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvResultado.RowTemplate.Height = 40
+        Me.dgvResultado.Size = New System.Drawing.Size(588, 193)
+        Me.dgvResultado.TabIndex = 72
+        '
+        'txtBusca
+        '
+        Me.txtBusca.Location = New System.Drawing.Point(96, 82)
+        Me.txtBusca.Name = "txtBusca"
+        Me.txtBusca.Size = New System.Drawing.Size(505, 20)
+        Me.txtBusca.TabIndex = 73
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.capaPresentacion.My.Resources.Resources.menuBuscar
+        Me.PictureBox1.Location = New System.Drawing.Point(13, 78)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 74
+        Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(42, 85)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.TabIndex = 75
+        Me.Label1.Text = "Buscar :"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.capaPresentacion.My.Resources.Resources.menuCliente
+        Me.PictureBox2.Location = New System.Drawing.Point(246, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(62, 53)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 76
+        Me.PictureBox2.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(225, 59)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(98, 13)
+        Me.Label2.TabIndex = 77
+        Me.Label2.Text = "Seleccionar Cliente"
+        '
+        'btdCancelar
+        '
+        Me.btdCancelar.Image = CType(resources.GetObject("btdCancelar.Image"), System.Drawing.Image)
+        Me.btdCancelar.Location = New System.Drawing.Point(599, -1)
+        Me.btdCancelar.Name = "btdCancelar"
+        Me.btdCancelar.Size = New System.Drawing.Size(35, 31)
+        Me.btdCancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btdCancelar.TabIndex = 78
+        Me.btdCancelar.TabStop = False
+        '
+        'btdAceptar
+        '
+        Me.btdAceptar.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btdAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btdAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btdAceptar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btdAceptar.Location = New System.Drawing.Point(435, 342)
+        Me.btdAceptar.Name = "btdAceptar"
+        Me.btdAceptar.Size = New System.Drawing.Size(166, 35)
+        Me.btdAceptar.TabIndex = 82
+        Me.btdAceptar.Text = "Aceptar"
+        Me.btdAceptar.UseVisualStyleBackColor = False
         '
         'frmclientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(633, 564)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.ToolStrip1)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(633, 438)
+        Me.Controls.Add(Me.btdAceptar)
+        Me.Controls.Add(Me.btdCancelar)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.txtBusca)
+        Me.Controls.Add(Me.dgvResultado)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmclientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clientes"
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
         CType(Me.dgvResultado, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btdCancelar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents btdAgregar As ToolStripButton
-    Friend WithEvents btdEditar As ToolStripButton
-    Friend WithEvents btdEliminar As ToolStripButton
-    Friend WithEvents btdBuscar As ToolStripButton
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents btdImprimir As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents btdSalir As ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents txtBusca As ToolStripTextBox
-    Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents dgvResultado As DataGridView
+    Friend WithEvents txtBusca As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btdCancelar As PictureBox
+    Friend WithEvents btdAceptar As Button
 End Class

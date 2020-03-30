@@ -33,7 +33,7 @@ Public Class frmclientes
         End If
     End Sub
 
-    Private Sub btdAgregar_Click(sender As Object, e As EventArgs) Handles btdAgregar.Click
+    Private Sub btdAgregar_Click(sender As Object, e As EventArgs)
         Close()
         AbrirFormInPanel(frmDetalleClientes)
         frmPrincipal.txtTitulo.Text = "Agregar Cliente"
@@ -59,7 +59,7 @@ Public Class frmclientes
         End Try
     End Sub
 
-    Private Sub btdEditar_Click(sender As Object, e As EventArgs) Handles btdEditar.Click
+    Private Sub btdEditar_Click(sender As Object, e As EventArgs)
         Try
             n = dgvResultado.CurrentRow.Index
         Catch ex As Exception
@@ -81,7 +81,7 @@ Public Class frmclientes
         frmDetalleClientes.txtTlfContacto.Enabled = True
     End Sub
 
-    Private Sub btdEliminar_Click(sender As Object, e As EventArgs) Handles btdEliminar.Click
+    Private Sub btdEliminar_Click(sender As Object, e As EventArgs)
         Try
             n = dgvResultado.CurrentRow.Index
         Catch ex As Exception
@@ -107,19 +107,19 @@ Public Class frmclientes
         End If
     End Sub
 
-    Private Sub btdBuscar_Click(sender As Object, e As EventArgs) Handles btdBuscar.Click
+    Private Sub btdBuscar_Click(sender As Object, e As EventArgs)
         consulta = "select idcliente as id, nombre, nroidentificacion as identificacion from adm_clientes where nombre like '%" & txtBusca.Text & "%';"
         tabla = "adm_clientes"
         dgvResultado.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
     End Sub
 
-    Private Sub btdSalir_Click(sender As Object, e As EventArgs) Handles btdSalir.Click
+    Private Sub btdSalir_Click(sender As Object, e As EventArgs)
         Close()
         AbrirFormInPanel(frmGrupoMaestros)
         frmPrincipal.txtTitulo.Text = "Maestros"
     End Sub
 
-    Private Sub btdImprimir_Click(sender As Object, e As EventArgs) Handles btdImprimir.Click
+    Private Sub btdImprimir_Click(sender As Object, e As EventArgs)
         If lv_swcb = "1" Then
             lv_operacion = "imprimir"
             ExcelDinamico()
@@ -136,5 +136,40 @@ Public Class frmclientes
         dgvResultado.Columns(2).Width = 120
         ExcelDinamico()
         lv_swcb = "1"
+    End Sub
+
+    Private Sub txtBusca_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBusca.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            consulta = "select idcliente as id, nombre, nroidentificacion as identificacion from adm_clientes where nombre like '%" & txtBusca.Text & "%';"
+            tabla = "adm_clientes"
+            dgvResultado.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
+        End If
+    End Sub
+
+    Private Sub btdCancelar_Click(sender As Object, e As EventArgs) Handles btdCancelar.Click
+        Close()
+        frmDetalleClientes.Show()
+    End Sub
+
+    Private Sub btdAceptar_Click(sender As Object, e As EventArgs) Handles btdAceptar.Click
+        Try
+            n = dgvResultado.CurrentRow.Index
+        Catch ex As Exception
+            n = 0
+        End Try
+        lv_id = dgvResultado.Rows(n).Cells(0).Value
+        Close()
+        frmDetalleClientes.Show()
+        frmPrincipal.txtTitulo.Text = "Actualizar Cliente"
+        frmDetalleClientes.Text = "Actualizar"
+        frmDetalleClientes.txtId.Text = lv_id
+        'frmDetalleClientes.txtNombre.Enabled = True
+        'frmDetalleClientes.txtNroIdentifiacion.Enabled = True
+        'frmDetalleClientes.txtDireccion.Enabled = True
+        'frmDetalleClientes.txtTelefonos.Enabled = True
+        'frmDetalleClientes.txtCorreo.Enabled = True
+        'frmDetalleClientes.txtWS.Enabled = True
+        'frmDetalleClientes.txtNombreContacto.Enabled = True
+        'frmDetalleClientes.txtTlfContacto.Enabled = True
     End Sub
 End Class

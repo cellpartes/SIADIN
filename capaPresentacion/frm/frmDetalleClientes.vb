@@ -20,8 +20,9 @@ Public Class frmDetalleClientes
     End Sub
     Private Sub btdCancela_Click(sender As Object, e As EventArgs) Handles btdCancela.Click
         Close()
-        AbrirFormInPanel(frmclientes)
-        frmPrincipal.txtTitulo.Text = "Mantenimiento de Clientes"
+        'AbrirFormInPanel(frmclientes)
+        'frmPrincipal.txtTitulo.Text = "Mantenimiento de Clientes"
+        frmVentas.Show()
     End Sub
 
     Private Sub btdOk_Click(sender As Object, e As EventArgs) Handles btdOk.Click
@@ -72,6 +73,62 @@ Public Class frmDetalleClientes
         Close()
         AbrirFormInPanel(frmclientes)
         frmPrincipal.txtTitulo.Text = "Mantenimiento de Clientes"
+    End Sub
+
+    Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs)
+        If lv_swcb = "0" Then
+            Try
+                If cbDepartamento.SelectedValue.ToString <> "" Then
+                    lv_sw = cbDepartamento.SelectedValue.ToString
+                Else
+                    lv_sw = "01"
+                End If
+                consulta = "select ubigeo_prov, provincia from adm_provincias where ubigeo_dpto = '" & lv_sw & "'"
+                tabla = "adm_provincias"
+                cbProvincia.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
+                cbProvincia.DisplayMember = "provincia"
+                cbProvincia.ValueMember = "ubigeo_prov"
+            Catch ex As Exception
+                MessageBox.Show("Error cargando provincias, " + ex.Message, "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+            Try
+                If cbProvincia.SelectedValue.ToString <> "" Then
+                    lv_sw = cbProvincia.SelectedValue.ToString
+                Else
+                    lv_sw = "0101"
+                End If
+                consulta = "select ubigeo_distrito, distrito from adm_distritos where ubigeo_prov = '" & lv_sw & "'"
+                tabla = "adm_distritos"
+                cbDistrito.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
+                cbDistrito.DisplayMember = "distrito"
+                cbDistrito.ValueMember = "ubigeo_distrito"
+            Catch ex As Exception
+                MessageBox.Show("Error cargando distritos 1, " + ex.Message, "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+        End If
+    End Sub
+
+    Private Sub cbProvincia_SelectedIndexChanged(sender As Object, e As EventArgs)
+        If lv_swcb = "0" Then
+            Try
+                If cbProvincia.SelectedValue.ToString <> "" Then
+                    lv_sw = cbProvincia.SelectedValue.ToString
+                Else
+                    lv_sw = "0101"
+                End If
+                consulta = "select ubigeo_distrito, distrito from adm_distritos where ubigeo_prov = '" & lv_sw & "'"
+                tabla = "adm_distritos"
+                cbDistrito.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
+                cbDistrito.DisplayMember = "distrito"
+                cbDistrito.ValueMember = "ubigeo_distrito"
+            Catch ex As Exception
+                MessageBox.Show("Error cargando distritos 2, " + ex.Message, "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+        End If
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        frmclientes.Show()
     End Sub
 
     Private Sub txtId_TextChanged(sender As Object, e As EventArgs) Handles txtId.TextChanged
@@ -154,55 +211,10 @@ Public Class frmDetalleClientes
         lv_swcb = "0"
     End Sub
 
-    Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
-        If lv_swcb = "0" Then
-            Try
-                If cbDepartamento.SelectedValue.ToString <> "" Then
-                    lv_sw = cbDepartamento.SelectedValue.ToString
-                Else
-                    lv_sw = "01"
-                End If
-                consulta = "select ubigeo_prov, provincia from adm_provincias where ubigeo_dpto = '" & lv_sw & "'"
-                tabla = "adm_provincias"
-                cbProvincia.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
-                cbProvincia.DisplayMember = "provincia"
-                cbProvincia.ValueMember = "ubigeo_prov"
-            Catch ex As Exception
-                MessageBox.Show("Error cargando provincias, " + ex.Message, "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End Try
-            Try
-                If cbProvincia.SelectedValue.ToString <> "" Then
-                    lv_sw = cbProvincia.SelectedValue.ToString
-                Else
-                    lv_sw = "0101"
-                End If
-                consulta = "select ubigeo_distrito, distrito from adm_distritos where ubigeo_prov = '" & lv_sw & "'"
-                tabla = "adm_distritos"
-                cbDistrito.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
-                cbDistrito.DisplayMember = "distrito"
-                cbDistrito.ValueMember = "ubigeo_distrito"
-            Catch ex As Exception
-                MessageBox.Show("Error cargando distritos 1, " + ex.Message, "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End Try
-        End If
-    End Sub
+    Private Sub btdAceptar_Click(sender As Object, e As EventArgs) Handles btdAceptar.Click
+        Close()
+        frmVentas.TextBox1.Text = "roger"
+        frmVentas.Show()
 
-    Private Sub cbProvincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProvincia.SelectedIndexChanged
-        If lv_swcb = "0" Then
-            Try
-                If cbProvincia.SelectedValue.ToString <> "" Then
-                    lv_sw = cbProvincia.SelectedValue.ToString
-                Else
-                    lv_sw = "0101"
-                End If
-                consulta = "select ubigeo_distrito, distrito from adm_distritos where ubigeo_prov = '" & lv_sw & "'"
-                tabla = "adm_distritos"
-                cbDistrito.DataSource = cnAccesoDatos.LlenaComboBox(consulta, tabla).Tables(0)
-                cbDistrito.DisplayMember = "distrito"
-                cbDistrito.ValueMember = "ubigeo_distrito"
-            Catch ex As Exception
-                MessageBox.Show("Error cargando distritos 2, " + ex.Message, "Courier", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End Try
-        End If
     End Sub
 End Class
